@@ -10705,6 +10705,7 @@ header.masthead .page-heading .subheading,
 header.masthead .site-heading .subheading {
   font-size: 1.5rem;
   font-weight: 300;
+  font-style: italic;
   line-height: 1.1;
   display: block;
   margin-top: 0.625rem;
