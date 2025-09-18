@@ -14,7 +14,89 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
-        
+        <style>
+            /* Career Journey Styles */
+            .journey-container {
+              position: relative;
+              max-width: 1200px;
+              margin: auto;
+              text-align: center;
+            }
+            .timeline {
+              position: relative;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              margin-bottom: 3rem;
+              padding: 0 2.5%;
+            }
+            .circle {
+              width: 30px;
+              height: 30px;
+              border: 4px solid #009688;
+              border-radius: 50%;
+              background: #fff;
+              position:relative;
+              z-index: 2;
+              flex: 1 1 0;
+              margin: 0 7rem;
+            }
+            .line {
+              position: absolute;
+              top: 50%;
+              left: 0;
+              right: 0;
+              height: 4px;
+              background: #009688;
+              z-index: 1;
+            }
+            .plane {
+              position: absolute;
+              top: 50%;
+              left: 0;
+              width: 40px;
+              height: 40px;
+              fill: #009688;
+              z-index: 3;
+              transform: translateY(-50%);
+              animation: fly 15s infinite;
+            }
+            @keyframes fly {
+              0%{left: 0%;}
+              8%   { left: 13%; }
+              25%  { left: 36%; }
+              50%  { left: 60%; }
+              75%  { left: 84%; }
+              100% { left: 100%; }
+            }
+            .labels {
+              display: flex;
+              justify-content: space-between;
+              margin-top: 2rem;
+              padding: 0 2.5%;
+            }
+            .label {
+              flex: 1 1 0;
+              text-align: center;
+              margin: 0 0.5rem;
+            }
+            .label h3 {
+              margin: 0.5rem 0;
+              font-size: 1.1rem;
+              font-weight: bold;
+              color: #009688;
+            }
+            .label h4 {
+              margin: 0.3rem 0;
+              font-size: 1.1rem;
+              font-weight: bold;
+            }
+            .label p {
+              margin: 0.3rem 0;
+              font-size: 0.95rem;
+              color: #444;
+            }
+        </style>
     </head>
     <body>
         <!-- Navigation-->
@@ -55,9 +137,50 @@
 
     <!-- Section 1: Career Progression Map -->
     <section class="mb-5 text-center">
-        <h2 class="mb-4">My Career Progression</h2>
-        <img src="assets/img/2.jpg" alt="Career Progression Map" class="img-fluid rounded shadow">
-    </section>
+                <h2 class="mb-4">My Career Progression</h2>
+                
+                <!-- Integrated Career Journey Timeline -->
+                <div class="journey-container">
+                    <div class="timeline">
+                        <div class="line"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <!-- Paper plane -->
+                        <svg class="plane" viewBox="0 0 24 24">
+                          <path d="M2 3l20 9-20 9 5-9z"/>
+                        </svg>
+                    </div>
+                    <!-- Labels below circles -->
+                    <div class="labels">
+                      <div class="label">
+                        <h3>Jul 2019 – Mar 2022</h3>
+                        <h4>Software Engineer 1</h4>
+                        <p><strong>Dell Technologies</strong><br>
+                        Streamlined workflows and enhanced user experiences, ensuring high-quality code and bridging functional gaps.</p>
+                      </div>
+                      <div class="label">
+                        <h3>Apr 2022 – Jul 2023</h3>
+                        <h4>Technical Project Manager</h4>
+                        <p><strong>Dell Technologies</strong><br>
+                        Led automation initiatives to improve efficiency and achieved substantial cost savings. Recognized by the CIO.</p>
+                      </div>
+                      <div class="label">
+                        <h3>Sep 2023 – May 2025</h3>
+                        <h4>Personal Goal</h4>
+                        <p><strong>HEC Paris (#12 FT Global Ranking)</strong><br>
+                        Pursued MBA and specialized in Strategic Marketing.</p>
+                      </div>
+                      <div class="label">
+                        <h3>Jun 2024 – Sep 2024</h3>
+                        <h4>Product & Strategy Intern</h4>
+                        <p><strong>Ayolab</strong><br>
+                        Improved product market fit, piloted new features, and enhanced user experience at a B2B SaaS startup.</p>
+                      </div>
+                    </div>
+                </div>
+            </section>
 
     <!-- Section 2: Key Highlights -->
     <section>
@@ -103,7 +226,7 @@
                     <div class="card-body">
                         <h5 class="card-title">The launch of Test Data Management Tool</h5>
                         <p class="card-text">At Dell, internal testing setups were a time sink, 45–60 minutes per SKU. And with 10,000 -12,000 SKUs a year, that’s… way too many hours (and coffees) down the drain. The solution looked simple: automate. The real challenge? People, not processes.
-                            <br><a href="salsus.html">Click here to read more</a>
+                            <br><a href="trial.html">Click here to read more</a>
                         </p>
                     </div>
                 </div>
@@ -117,7 +240,7 @@
                     <div class="card-body">
                         <h5 class="card-title">AR Office Navigator</h5>
                         <p class="card-text">Finding meeting rooms at Dell was a challenge. I am not saying that it was business breaking challenge, but if I were headed to a meeting, stopped by to get coffee, then I’d like to reach the meeting room before my espresso turned depresso. The campus was huge, the resources were available, and I had friends just as curious about Augmented Reality as I. So, what happens when you mix a giant campus with AR and a little curiosity?
-                            <br><a href="salsus.html">Click here to read more</a>
+                            <br><a href="navigator.html">Click here to read more</a>
                         </p>
                     </div>
                 </div>
@@ -126,6 +249,41 @@
             
         </div>
     </section>
+    <!-- Add this section where you want the hobbies & interests to appear, e.g., after your main content but before the footer -->
+
+<section class="my-5">
+    <hr>
+    <h2 class="mb-4 text-center">Hobbies & Interests</h2><div class="d-flex justify-content-center mb-3">
+        <div style="width: 200px; border-bottom: 2px solid #222;"></div>
+    </div>
+    <div class="row text-center" style="font-size:1.2rem;">
+        <div class="col-6 col-md-2 mb-4">
+            <i class="fas fa-map-marked-alt fa-2x mb-2"></i><br>
+            Travelling
+        </div>
+        <div class="col-6 col-md-2 mb-4">
+            <i class="fas fa-book-reader fa-2x mb-2"></i><br>
+            Reading
+        </div>
+        <div class="col-6 col-md-2 mb-4">
+            <i class="fas fa-book-open fa-2x mb-2"></i><br>
+            Poetry
+        </div>
+        <div class="col-6 col-md-2 mb-4">
+            <i class="fas fa-bicycle fa-2x mb-2"></i><br>
+            Cycling
+        </div>
+        <div class="col-6 col-md-2 mb-4">
+            <i class="fas fa-dumbbell fa-2x mb-2"></i><br>
+            Fitness
+        </div>
+        <div class="col-6 col-md-2 mb-4">
+            
+            <i class="fas fa-user-ninja fa-2x mb-2"></i><br>
+            Martial arts
+        </div>
+    </div>
+</section>
 
 </main>
 
