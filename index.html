@@ -14,7 +14,7 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
-        <style>
+        <!-- <style>
             /* Career Journey Styles */
             .journey-container {
               position: relative;
@@ -96,7 +96,7 @@
               font-size: 0.95rem;
               color: #444;
             }
-        </style>
+        </style> -->
     </head>
     <body>
         <!-- Navigation-->
@@ -137,50 +137,194 @@
 
     <!-- Section 1: Career Progression Map -->
     <section class="mb-5 text-center">
-                <h2 class="mb-4">My Career Progression</h2>
-                
-                <!-- Integrated Career Journey Timeline -->
-                <div class="journey-container">
-                    <div class="timeline">
-                        <div class="line"></div>
-                        <div class="circle"></div>
-                        <div class="circle"></div>
-                        <div class="circle"></div>
-                        <div class="circle"></div>
-                        <!-- Paper plane -->
-                        <svg class="plane" viewBox="0 0 24 24">
-                          <path d="M2 3l20 9-20 9 5-9z"/>
-                        </svg>
-                    </div>
-                    <!-- Labels below circles -->
-                    <div class="labels">
-                      <div class="label">
-                        <h3>Jul 2019 – Mar 2022</h3>
-                        <h4>Software Engineer 1</h4>
-                        <p><strong>Dell Technologies</strong><br>
-                        Streamlined workflows and enhanced user experiences, ensuring high-quality code and bridging functional gaps.</p>
-                      </div>
-                      <div class="label">
-                        <h3>Apr 2022 – Jul 2023</h3>
-                        <h4>Technical Project Manager</h4>
-                        <p><strong>Dell Technologies</strong><br>
-                        Led automation initiatives to improve efficiency and achieved substantial cost savings. Recognized by the CIO.</p>
-                      </div>
-                      <div class="label">
-                        <h3>Sep 2023 – May 2025</h3>
-                        <h4>Personal Goal</h4>
-                        <p><strong>HEC Paris (#12 FT Global Ranking)</strong><br>
-                        Pursued MBA and specialized in Strategic Marketing.</p>
-                      </div>
-                      <div class="label">
-                        <h3>Jun 2024 – Sep 2024</h3>
-                        <h4>Product & Strategy Intern</h4>
-                        <p><strong>Ayolab</strong><br>
-                        Improved product market fit, piloted new features, and enhanced user experience at a B2B SaaS startup.</p>
-                      </div>
-                    </div>
-                </div>
-            </section>
+  <h2 class="mb-4">My Career Progression</h2>
+
+  <div class="journey-container">
+    <div class="timeline">
+
+      <!-- Stop 1 -->
+      <div class="stop">
+        <div class="circle"></div>
+        <div class="label">
+          <h3>Jul 2019 – Mar 2022</h3>
+          <h4>Software Engineer 1</h4>
+          <p><strong>Dell Technologies</strong><br>
+          Streamlined workflows and enhanced user experiences, ensuring high-quality code and bridging functional gaps.</p>
+        </div>
+      </div>
+
+      <!-- Stop 2 -->
+      <div class="stop">
+        <div class="circle"></div>
+        <div class="label">
+          <h3>Apr 2022 – Jul 2023</h3>
+          <h4>Technical Project Manager</h4>
+          <p><strong>Dell Technologies</strong><br>
+          Led automation initiatives to improve efficiency and achieved substantial cost savings. Recognized by the CIO.</p>
+        </div>
+      </div>
+
+      <!-- Stop 3 -->
+      <div class="stop">
+        <div class="circle"></div>
+        <div class="label">
+          <h3>Sep 2023 – May 2025</h3>
+          <h4>Personal Goal</h4>
+          <p><strong>HEC Paris (#12 FT Global Ranking)</strong><br>
+          Pursued MBA and specialized in Strategic Marketing.</p>
+        </div>
+      </div>
+
+      <!-- Stop 4 -->
+      <div class="stop">
+        <div class="circle"></div>
+        <div class="label">
+          <h3>Jun 2024 – Sep 2024</h3>
+          <h4>Product & Strategy Intern</h4>
+          <p><strong>Ayolab</strong><br>
+          Improved product market fit, piloted new features, and enhanced user experience at a B2B SaaS startup.</p>
+        </div>
+      </div>
+
+      <!-- Line -->
+      <div class="line"></div>
+
+      <!-- Plane -->
+      <svg class="plane" viewBox="0 0 24 24">
+        <path d="M2 3l20 9-20 9 5-9z"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<style>
+.journey-container {
+  position: relative;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.timeline {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.stop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  position: relative;
+}
+
+.circle {
+  width: 30px;
+  height: 30px;
+  border: 4px solid #171a58;;
+  border-radius: 50%;
+  background: #fff;
+  z-index: 2;
+}
+
+.line {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: #171a58;
+  z-index: 1;
+}
+
+.plane {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  fill: #171a58;
+  z-index: 3;
+  animation: fly 15s infinite;
+}
+
+
+ @keyframes fly {
+              0%{left: 0%;}
+              5%   { left: 10%; }
+              25%  { left: 36%; }              
+              50%  { left: 60%; }
+              75%  { left: 86%; }            
+              100% { left: 100%; }
+            }
+
+.label {
+  margin-top: 1rem;
+  text-align: center;
+  max-width: 250px;
+}
+.label h3 {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #282fb0;;
+}
+.label h4 {
+  margin: 0.3rem 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.label p {
+  font-size: 0.9rem;
+  color: #444;
+}
+
+/* -------- Mobile view -------- */
+@media (max-width: 768px) {
+  .timeline {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .line {
+    top: 0;
+    left: 15px;
+    width: 4px;
+    height: 100%;
+  }
+
+  .stop {
+    flex-direction: row;
+    align-items: flex-start;
+    margin: 2rem 0;
+  }
+
+  .circle {
+    margin-right: 1rem;
+  }
+
+  .label {
+    text-align: left;
+    margin-top: 0;
+    max-width: 100%;
+  }
+
+  .plane {
+    animation: fly-vertical 15s infinite;
+    left: 0;
+    top: 0;
+    transform: translateX(-50%);
+  }
+  @keyframes fly-vertical {
+    0%   { top: 0%; }
+    30%  { top: 30%; }
+    60%  { top: 56%; }
+    90% { top: 77%; }
+    100% { top: 100%;}
+  }
+}
+</style>
+
 
     <!-- Section 2: Key Highlights -->
     <section>
