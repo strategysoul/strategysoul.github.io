@@ -1,0 +1,113 @@
+.section {
+  background: var(--bg);
+  padding: 7rem 8vw;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 5rem;
+}
+
+.label {
+  display: block;
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--ink);
+}
+
+.timeline {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+}
+
+.line {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--border);
+}
+
+.stop {
+  padding: 2.5rem 2rem 0 0;
+  position: relative;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  position: absolute;
+  top: 5px;
+  left: 0;
+  transform: translate(0, 0);
+}
+
+.period {
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+  padding-top: 2rem;
+}
+
+.role {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.25rem;
+}
+
+.org {
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.desc {
+  font-size: 0.9rem;
+  color: var(--ink-muted);
+  line-height: 1.65;
+}
+
+@media (max-width: 900px) {
+  .timeline {
+    grid-template-columns: 1fr;
+    padding-left: 2rem;
+  }
+  .line {
+    top: 0;
+    bottom: 0;
+    left: 5px;
+    right: auto;
+    width: 1px;
+    height: 100%;
+  }
+  .stop { padding: 0 0 3rem 2rem; }
+  .dot { top: 0; left: -2rem; }
+  .period { padding-top: 0; }
+}
+
+@media (max-width: 600px) {
+  .section { padding: 5rem 1.5rem; }
+}

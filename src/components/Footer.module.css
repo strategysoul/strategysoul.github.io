@@ -1,0 +1,46 @@
+.footer {
+  background: var(--bg-dark);
+  color: #C8B9A8;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.cta {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 500;
+  color: #FAF8F4;
+  margin-bottom: 1.5rem;
+}
+
+.links {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.iconLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.iconLink:hover {
+  background: rgba(255,255,255,0.16);
+  transform: translateY(-2px);
+}
+
+.iconLink img {
+  object-fit: contain;
+}
+
+.copy {
+  font-size: 0.8rem;
+  color: #6B5D4E;
+}

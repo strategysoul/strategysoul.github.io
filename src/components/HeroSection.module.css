@@ -1,0 +1,126 @@
+.hero {
+  min-height: calc(100vh - 72px);
+  background: var(--bg);
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 4rem;
+  padding: 5rem 8rem 5rem 8vw;
+  overflow: hidden;
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.25rem;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: clamp(4.5rem, 9vw, 8rem);
+  font-weight: 700;
+  line-height: 0.95;
+  color: var(--ink);
+  margin-bottom: 1.75rem;
+  letter-spacing: -0.02em;
+}
+
+.tagline {
+  font-size: 1.05rem;
+  color: var(--ink-muted);
+  max-width: 42ch;
+  line-height: 1.65;
+  margin-bottom: 2.5rem;
+}
+
+.ctas {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.ctaPrimary {
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.875rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.85rem 2rem;
+  transition: background 0.2s;
+}
+
+.ctaPrimary:hover { background: #a85025; }
+
+.ctaSecondary {
+  font-size: 0.875rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 2px;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.ctaSecondary:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.socialLogo {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.35rem;
+  object-fit: contain;
+}
+
+.imageWrap {
+  position: relative;
+  justify-self: end;
+}
+
+.photo {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  object-position: top;
+  position: relative;
+  z-index: 1;
+}
+
+.accentBox {
+  position: absolute;
+  bottom: -1.5rem;
+  right: -1.5rem;
+  width: 60%;
+  height: 60%;
+  background: var(--accent-light);
+  z-index: 0;
+}
+
+@media (max-width: 1024px) {
+  .hero {
+    padding: 4rem 5vw;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 3rem 1.5rem 2rem;
+    min-height: auto;
+    gap: 3rem;
+  }
+  .imageWrap {
+    justify-self: center;
+    width: 100%;
+    max-width: 220px;
+  }
+  .photo { max-width: 100%; }
+  .accentBox { display: none; }
+}

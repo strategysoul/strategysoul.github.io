@@ -1,0 +1,41 @@
+:root {
+  --bg: #FAF8F4;
+  --bg-warm: #F2EDE6;
+  --bg-dark: #1C160E;
+  --ink: #1C160E;
+  --ink-muted: #6B5D4E;
+  --accent: #C4622D;
+  --accent-light: #F4E2D4;
+  --border: #E5D9CC;
+  --font-display: var(--font-playfair), Georgia, serif;
+  --font-body: var(--font-dm-sans), system-ui, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
