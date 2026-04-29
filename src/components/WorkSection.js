@@ -3,8 +3,15 @@ import styles from './WorkSection.module.css'
 
 const projects = [
   {
+    title: 'I tested 12 transcription models so you don\'t have to',
+    teaser: 'Whisper is still king. Azure disappointed. AssemblyAI came out of nowhere. Here\'s the full benchmark.',
+    href: '/transcription-benchmark',
+    image: '/assets/img/2.jpg',
+    tag: 'AI Research · Huscribe',
+  },
+  {
     title: 'Reducing plastics using behavioral nudges',
-    teaser: 'India\'s plastic ban flopped. We asked why,and proposed something smarter than punishment.',
+    teaser: 'India\'s plastic ban flopped. We asked why, and proposed something smarter than punishment.',
     href: '/plastic',
     image: '/assets/img/2.jpg',
     tag: 'Behavioral Strategy · HEC Paris',

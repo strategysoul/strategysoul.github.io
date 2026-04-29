@@ -26,9 +26,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${playfair.variable} ${dmSans.variable}`}>
-      <head>
-        <link rel="stylesheet" href="/css/styles.css" />
-      </head>
+
       <body>
         <Navbar />
         {children}
