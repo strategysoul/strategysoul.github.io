@@ -30,15 +30,6 @@ export default function TranscriptionBenchmark() {
       <p>Clean American English is too easy. It tells you nothing. Accented speech is where models actually separate, and for a global sales platform, accented English is the <em>default</em>, not the edge case. I varied clip length, speaker pace, and topic density deliberately. A benchmark that only tests one speaker per accent group is just anecdote. (And a quiet thank you to my HEC Paris professors, whose lectures are apparently all over the internet. Very convenient for benchmarking purposes.)</p>
       <p><strong>Ground truth:</strong> human-verified transcripts for all 50 clips. <strong>Metric:</strong> WER (Word Error Rate), the percentage of words the model gets wrong, normalized for case and punctuation. The numbers in the table below are averages across all 25 clips per accent group. Lower is better. Zero is perfect.</p>
       <p>I built a Python benchmarking script that sends each clip to every API, computes WER against ground truth, caches results so completed runs aren&apos;t repeated, and outputs a comparison table. At 50 clips across 12 models, that&apos;s 600 API calls per full run. The caching mattered.</p>
-      <p><strong>The setup fought back.</strong> It always does.</p>
-      <ul>
-        <li><strong>Microsoft MAI-Transcribe-1</strong> required audio hosted on Azure Blob Storage, not local files. Deferred.</li>
-        <li><strong>Azure&apos;s REST API</strong> silently transcribes only the first utterance then stops. No error, no warning. Just stops. Switched to SDK with continuous recognition.</li>
-        <li><strong>Azure SDK can&apos;t decode MP3</strong> without GStreamer or ffmpeg, neither of which were installable in my environment. Fix: macOS&apos;s built-in <code>afconvert</code>. Unglamorous. Worked.</li>
-        <li><strong>AssemblyAI&apos;s <code>speech_model</code> parameter</strong> was deprecated without much fanfare. The new parameter is <code>speech_models</code> (plural), with completely renamed models.</li>
-        <li><strong>Three Gemini models</strong> are simply blocked on the free Google Cloud tier. Limit: zero requests. Results pending billing.</li>
-      </ul>
-      <p>Benchmarking is always like this. Half the work is just getting everything to actually run.</p>
 
       <h2>The Results</h2>
       <p>Averaged WER across 25 clips per accent group.</p>
@@ -92,6 +83,7 @@ export default function TranscriptionBenchmark() {
       <h2>What I Actually Shipped</h2>
       <p>The benchmark pointed to Tier 1. The real product needed something more careful.</p>
       <p>The variance across runs was still too high to bet on a single model. And in real testing, a new problem emerged that no WER score would have caught: Indian-accented English with Indian or Desi names caused models to silently switch languages. Say &quot;Samir&quot; and the transcript defaulted to Hindi. Say &quot;Khan&quot; and it drifted toward Urdu. Technically plausible, practically wrong, and a genuinely bad experience for the user who just wants their sales call transcribed in English.</p>
+      <img src="/assets/img/transcript.jpeg" alt="Transcript output example" />
       <p>So the architecture I landed on uses three models in sequence. Whisper handles language detection first. Once the language is confirmed, GPT-4o Transcribe runs the actual transcription anchored to that language. A third model (Gemini, once quota allows) cross-checks the output. If the two transcriptions diverge beyond a confidence threshold, the user gets to resolve the difference. If they agree, the higher-confidence result goes through.</p>
       <p>It&apos;s more expensive than picking a winner and shipping it. But for a sales tool where one mis-transcribed name can derail a deal, the redundancy is the product.</p>
 

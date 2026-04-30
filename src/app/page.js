@@ -2,7 +2,6 @@ import HeroSection from '@/components/HeroSection'
 import AboutSection from '@/components/AboutSection'
 import JourneySection from '@/components/JourneySection'
 import WorkSection from '@/components/WorkSection'
-import StrategySection from '@/components/StrategySection'
 import InterestsSection from '@/components/InterestsSection'
 
 export const metadata = {
@@ -17,7 +16,6 @@ export default function Home() {
       <AboutSection />
       <JourneySection />
       <WorkSection />
-      <StrategySection />
       <InterestsSection />
     </>
   )

@@ -4,14 +4,21 @@ import styles from './WorkSection.module.css'
 const projects = [
   {
     title: 'I tested 12 transcription models so you don\'t have to',
-    teaser: 'Whisper is still king. Azure disappointed. AssemblyAI came out of nowhere. Here\'s the full benchmark.',
+    teaser: '12 models. 5 providers. 50 clips. Whisper won, AssemblyAI surprised everyone, and Deepgram disappointed. Here\'s the full benchmark.',
     href: '/transcription-benchmark',
-    image: '/assets/img/2.jpg',
+    image: '/assets/img/accents.jpg',
     tag: 'AI Research · Huscribe',
   },
   {
+    title: 'Test Data Management Tool at Dell',
+    teaser: '12,000 SKUs tested per month, 45 minutes each. I automated it, earned CIO recognition, then figured out the harder problem: why engineers weren\'t using it.',
+    href: '/tdmt',
+    image: '/assets/img/award.png',
+    tag: 'Product · Dell Technologies',
+  },
+  {
     title: 'Reducing plastics using behavioral nudges',
-    teaser: 'India\'s plastic ban flopped. We asked why, and proposed something smarter than punishment.',
+    teaser: 'India\'s plastic ban flopped. We asked why, and proposed something smarter than punishment. The founder of BVA Nudge Consulting called it impressive.',
     href: '/plastic',
     image: '/assets/img/2.jpg',
     tag: 'Behavioral Strategy · HEC Paris',
@@ -22,13 +29,6 @@ const projects = [
     href: '/salsus',
     image: '/assets/img/salsus.png',
     tag: 'GTM Strategy · HEC Paris',
-  },
-  {
-    title: 'Test Data Management Tool at Dell',
-    teaser: 'When testing 12,000 SKUs a month takes 45 minutes each, automation isn\'t a nice-to-have. People adoption, however, is.',
-    href: '/tdmt',
-    image: '/assets/img/award.png',
-    tag: 'Product · Dell Technologies',
   },
   {
     title: 'AR Office Navigator',
