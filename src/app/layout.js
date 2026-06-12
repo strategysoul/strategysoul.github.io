@@ -17,10 +17,24 @@ const dmSans = DM_Sans({
 })
 
 export const metadata = {
+  metadataBase: new URL('https://strategysoul.github.io'),
   title: 'Sweta Kumari | StrategySoul',
   description: 'Strategy-driven product professional at the intersection of tech, strategy, and product.',
   authors: [{ name: 'Sweta Kumari' }],
   icons: { icon: '/favicon-knight.svg' },
+  openGraph: {
+    type: 'website',
+    siteName: 'StrategySoul',
+    title: 'Sweta Kumari | StrategySoul',
+    description: 'Strategy-driven product professional at the intersection of tech, strategy, and product.',
+    images: [{ url: '/assets/img/product-strategy.png', width: 1536, height: 1024 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Sweta Kumari | StrategySoul',
+    description: 'Strategy-driven product professional at the intersection of tech, strategy, and product.',
+    images: ['/assets/img/product-strategy.png'],
+  },
 }
 
 export default function RootLayout({ children }) {

@@ -57,6 +57,17 @@
 
 .body p:last-child { margin-bottom: 0; }
 
+.moreLink {
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 2px;
+}
+
+.moreLink:hover { opacity: 0.8; }
+
 @media (max-width: 900px) {
   .grid {
     grid-template-columns: 1fr;

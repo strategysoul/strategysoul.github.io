@@ -5,6 +5,19 @@ import styles from '@/components/CaseStudyLayout.module.css'
 export const metadata = {
   title: 'Transcription Model Benchmark | StrategySoul',
   description: 'I tested 12 speech-to-text models across 5 providers on 50 clips of accented English. Here\'s what I found.',
+  openGraph: {
+    type: 'article',
+    siteName: 'StrategySoul',
+    title: 'I Tested 12 Transcription Models So You Don\'t Have To',
+    description: '12 models. 5 providers. 50 clips of accented English. Whisper won, AssemblyAI surprised everyone, and Deepgram disappointed.',
+    images: [{ url: '/assets/img/product-strategy.png', width: 1536, height: 1024 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'I Tested 12 Transcription Models So You Don\'t Have To',
+    description: '12 models. 5 providers. 50 clips of accented English. Whisper won, AssemblyAI surprised everyone, and Deepgram disappointed.',
+    images: ['/assets/img/product-strategy.png'],
+  },
 }
 
 export default function TranscriptionBenchmark() {

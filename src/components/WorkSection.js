@@ -6,7 +6,7 @@ const projects = [
     title: 'I tested 12 transcription models so you don\'t have to',
     teaser: '12 models. 5 providers. 50 clips. Whisper won, AssemblyAI surprised everyone, and Deepgram disappointed. Here\'s the full benchmark.',
     href: '/transcription-benchmark',
-    image: '/assets/img/accents.jpg',
+    image: '/assets/img/product-strategy.png',
     tag: 'AI Research · Huscribe',
   },
   {
@@ -49,7 +49,7 @@ export default function WorkSection() {
         </div>
         <div className={styles.grid}>
           {projects.map((p, i) => (
-            <ProjectCard key={p.href} {...p} index={i} />
+            <ProjectCard key={p.href} {...p} index={i} featured={i === 0} />
           ))}
         </div>
       </div>

@@ -1,4 +1,5 @@
 'use client'
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 import styles from './AboutSection.module.css'
 
@@ -46,6 +47,7 @@ export default function AboutSection() {
             <p>So I moved to France to pursue an MBA at HEC Paris (because apparently that&apos;s the solution to everything). I specialised in Strategic Marketing, interned as a PM at a B2B SaaS startup, and learned that I could equally enjoy a SWOT analysis and a late espresso in Paris.</p>
             <p>Now I can speak most tech, finance, and marketing jargon, but more importantly, I understand people. And if you&apos;ve ever tried to sell readymade broth to French chefs, you&apos;ll know that&apos;s the harder skill.</p>
             <p>Currently at Humai, building a voice AI tool for sales reps. Early-stage startup, so PM is shorthand for product discovery, GTM, and deciding what &ldquo;done&rdquo; looks like before anyone&apos;s quite agreed on what we&apos;re building. Chaotic, fast, and exactly the kind of problem I like.</p>
+            <p><Link href="/about" className={styles.moreLink}>The full story →</Link></p>
           </motion.div>
         </div>
       </div>

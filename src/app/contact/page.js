@@ -1,47 +1,36 @@
-import Image from 'next/image'
+import styles from './page.module.css'
 
 export const metadata = {
   title: 'Contact | StrategySoul',
-  description: 'Get in touch with Sweta Kumari: product strategist and MBA graduate from HEC Paris.',
+  description: 'Get in touch with Sweta Kumari: product manager building voice AI, MBA from HEC Paris.',
 }
 
 export default function Contact() {
   return (
-    <main>
-      <header
-        className="masthead"
-        style={{ backgroundImage: "url('/assets/img/contact-bg.jpg')" }}
-      >
-        <div className="container position-relative px-4 px-lg-5">
-          <div className="row gx-4 gx-lg-5 justify-content-center">
-            <div className="col-md-10 col-lg-8 col-xl-7">
-              <div className="page-heading">
-                <h1>Contact Me</h1>
-                <span className="subheading">Have questions? I have answers.</span>
-              </div>
-            </div>
-          </div>
+    <main className={styles.page}>
+      <div className={styles.headerWrap}>
+        <div className={styles.header}>
+          <span className={styles.label}>Contact</span>
+          <h1 className={styles.title}>Have questions? I have answers.</h1>
+          <p className={styles.subtitle}>A role, a product problem, or a strong opinion about transcription models. All welcome.</p>
         </div>
-      </header>
+      </div>
 
-      <div className="mb-4">
-        <div className="container px-4 px-lg-5">
-          <div className="row gx-4 gx-lg-5 justify-content-center">
-            <div className="col-md-10 col-lg-8 col-xl-7">
-              <p>The best way to reach me is via:</p>
-              <div style={{ display: 'flex', gap: '1.5rem', marginTop: '1rem', alignItems: 'center' }}>
-                <a href="mailto:swetakumaripm@gmail.com" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
-                  <Image src="/assets/img/gmail.png" alt="Gmail" width={24} height={24} />
-                  swetakumaripm@gmail.com
-                </a>
-                <a href="https://www.linkedin.com/in/swetakumaripm" target="_blank" rel="noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
-                  <Image src="/assets/img/Linkedin.png" alt="LinkedIn" width={24} height={24} />
-                  swetakumaripm
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div className={styles.body}>
+        <a href="mailto:swetakumaripm@gmail.com" className={styles.card}>
+          <span className={styles.cardText}>
+            <span className={styles.cardLabel}>Email</span>
+            <span className={styles.cardValue}>swetakumaripm@gmail.com</span>
+          </span>
+          <span className={styles.cardArrow} aria-hidden="true">→</span>
+        </a>
+        <a href="https://www.linkedin.com/in/swetakumaripm" target="_blank" rel="noreferrer" className={styles.card}>
+          <span className={styles.cardText}>
+            <span className={styles.cardLabel}>LinkedIn</span>
+            <span className={styles.cardValue}>swetakumaripm</span>
+          </span>
+          <span className={styles.cardArrow} aria-hidden="true">↗</span>
+        </a>
       </div>
     </main>
   )

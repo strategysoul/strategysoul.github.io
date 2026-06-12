@@ -2,7 +2,7 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  padding: 1.25rem 2rem;
+  padding: 1.25rem 4vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -11,8 +11,9 @@
 }
 
 .nav.scrolled {
-  background: rgba(250, 248, 244, 0.96);
-  backdrop-filter: blur(8px);
+  background: rgba(250, 248, 244, 0.82);
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
   box-shadow: 0 1px 0 var(--border);
 }
 
@@ -20,8 +21,13 @@
   font-family: var(--font-display);
   font-size: 1.3rem;
   font-weight: 600;
-  color: var(--accent);
+  color: var(--ink);
   letter-spacing: 0.01em;
+}
+
+.logo::after {
+  content: '.';
+  color: var(--accent);
 }
 
 .links {

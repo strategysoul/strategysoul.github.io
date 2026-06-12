@@ -1,46 +1,70 @@
 .footer {
   background: var(--bg-dark);
   color: #C8B9A8;
-  padding: 4rem 2rem;
-  text-align: center;
+  padding: 6rem 8vw 3rem;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .cta {
   font-family: var(--font-display);
-  font-size: 2rem;
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
   font-weight: 500;
+  line-height: 1.15;
   color: #FAF8F4;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2.5rem;
 }
 
-.links {
+.email {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+  color: #E8C9A8;
+  border-bottom: 1px solid rgba(232, 201, 168, 0.4);
+  padding-bottom: 4px;
+  transition: color 0.25s, border-color 0.25s;
+}
+
+.email:hover {
+  color: #FAF8F4;
+  border-color: #FAF8F4;
+}
+
+.bottom {
   display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  margin-bottom: 3rem;
-}
-
-.iconLink {
-  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.08);
-  transition: background 0.2s, transform 0.2s;
-}
-
-.iconLink:hover {
-  background: rgba(255,255,255,0.16);
-  transform: translateY(-2px);
-}
-
-.iconLink img {
-  object-fit: contain;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(200, 185, 168, 0.18);
 }
 
 .copy {
   font-size: 0.8rem;
-  color: #6B5D4E;
+  color: #8a7a67;
+}
+
+.links {
+  display: flex;
+  gap: 2rem;
+}
+
+.link {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #C8B9A8;
+  transition: color 0.2s;
+}
+
+.link:hover { color: #FAF8F4; }
+
+@media (max-width: 600px) {
+  .footer { padding: 4.5rem 1.5rem 2.5rem; }
+  .bottom { flex-direction: column; align-items: flex-start; margin-top: 3.5rem; }
 }

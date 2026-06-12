@@ -51,7 +51,6 @@ export default function HeroSection() {
             rel="noreferrer"
             className={styles.ctaSecondary}
           >
-            <Image src="/assets/img/Linkedin.png" alt="LinkedIn" width={20} height={20} className={styles.socialLogo} />
             LinkedIn ↗
           </a>
         </motion.div>

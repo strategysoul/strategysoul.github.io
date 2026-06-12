@@ -3,12 +3,12 @@ import { motion } from 'framer-motion'
 import styles from './InterestsSection.module.css'
 
 const interests = [
-  { icon: '✍', label: 'Poetry', desc: 'Writing precisely is a skill. Useful in PRDs, even more useful in pitch decks.' },
-  { icon: '📖', label: 'Reading', desc: 'Fuels most of my strategic thinking. Also responsible for the commute money I don\'t have.' },
-  { icon: '🥋', label: 'Martial Arts', desc: 'Systems thinking in real time. Also useful when roadmaps get derailed.' },
-  { icon: '✈', label: 'Travelling', desc: 'The fastest way to understand that your assumptions about people are wrong.' },
-  { icon: '🚴', label: 'Cycling', desc: 'Long rides. Good for problems that don\'t have obvious answers yet.' },
-  { icon: '🏋', label: 'Fitness', desc: 'Discipline that shows up everywhere else, whether you want it to or not.' },
+  { label: 'Poetry', desc: 'Writing precisely is a skill. Useful in PRDs, even more useful in pitch decks.' },
+  { label: 'Reading', desc: 'Fuels most of my strategic thinking. Also responsible for the commute money I don\'t have.' },
+  { label: 'Martial Arts', desc: 'Systems thinking in real time. Also useful when roadmaps get derailed.' },
+  { label: 'Travelling', desc: 'The fastest way to understand that your assumptions about people are wrong.' },
+  { label: 'Cycling', desc: 'Long rides. Good for problems that don\'t have obvious answers yet.' },
+  { label: 'Fitness', desc: 'Discipline that shows up everywhere else, whether you want it to or not.' },
 ]
 
 export default function InterestsSection() {
@@ -36,7 +36,7 @@ export default function InterestsSection() {
               transition={{ duration: 0.5, delay: i * 0.07, ease: [0.22, 1, 0.36, 1] }}
               viewport={{ once: true }}
             >
-              <span className={styles.icon} aria-hidden="true">{item.icon}</span>
+              <span className={styles.num} aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
               <span className={styles.itemLabel}>{item.label}</span>
               <p className={styles.itemDesc}>{item.desc}</p>
             </motion.div>
