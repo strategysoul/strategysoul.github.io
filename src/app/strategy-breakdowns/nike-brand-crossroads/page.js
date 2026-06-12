@@ -1,6 +1,4 @@
-import Link from 'next/link'
 import CaseStudyLayout from '@/components/CaseStudyLayout'
-import styles from '@/components/CaseStudyLayout.module.css'
 
 export const metadata = {
   title: 'Nike\'s Brand Is at a Crossroads | StrategySoul',
@@ -13,6 +11,16 @@ export default function NikeBrandCrossroads() {
       tag="Strategy · Consumer Brands"
       title="Nike's Brand Is at a Crossroads"
       date="April 2025"
+      readTime="4 min read"
+      backHref="/strategy-breakdowns"
+      backLabel="← Back to Breakdowns"
+      bottomLine="Legacy is a runway, not a strategy — and runways have ends. Nike has the brand equity to rebuild, but only if product innovation and operational integrity recover together. A $4 billion ad budget can't substitute for either."
+      nextRead={{
+        tag: 'Strategy · Consumer Brands',
+        title: 'The Ordinary and the art of radical transparency',
+        teaser: 'The Ordinary built a cult following by saying the quiet part loud. What happens to that honesty under Estée Lauder?',
+        href: '/strategy-breakdowns/the-ordinary-authenticity',
+      }}
     >
       <p>Nike spends roughly $4 billion a year on advertising and promotions. It has one of the most recognised logos in history. And it is losing momentum. Not dramatically, not overnight, but steadily and in ways that are hard to reverse once they take hold.</p>
       <p>Three things got it here.</p>
@@ -33,8 +41,6 @@ export default function NikeBrandCrossroads() {
       <p>CEO John Donahoe promised "big ideas." That phrase has to materialise into products that feel genuinely new and into operational decisions that match the brand's stated values. Bill Ackman's purchase of 3 million shares suggests some investors see undervalued potential here. That confidence is only justified if the product pipeline and the brand integrity recover together.</p>
       <p>Nike's legacy is real. The Swoosh still carries enormous weight. But legacy is not a strategy. It is a runway, and runways have ends.</p>
       <p>The question is whether Nike uses what it has left to build something worth the next fifty years, or whether it manages the decline of the last fifty.</p>
-
-      <Link href="/strategy-breakdowns" className={styles.returnLink}>← Back to Breakdowns</Link>
     </CaseStudyLayout>
   )
 }

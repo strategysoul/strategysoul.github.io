@@ -1,6 +1,4 @@
-import Link from 'next/link'
 import CaseStudyLayout from '@/components/CaseStudyLayout'
-import styles from '@/components/CaseStudyLayout.module.css'
 
 export const metadata = {
   title: 'The Ordinary and the Art of Radical Transparency | StrategySoul',
@@ -13,6 +11,16 @@ export default function TheOrdinaryAuthenticity() {
       tag="Strategy · Consumer Brands"
       title="The Ordinary and the Art of Radical Transparency"
       date="April 2025"
+      readTime="5 min read"
+      backHref="/strategy-breakdowns"
+      backLabel="← Back to Breakdowns"
+      bottomLine="Transparency is only a competitive advantage while you can maintain it under pressure. The Ordinary taught its customers to read ingredient lists and question claims — and now Estée Lauder owns both the brand and that skeptical community. The next few product cycles will say everything."
+      nextRead={{
+        tag: 'Strategy · Wearables',
+        title: 'Why Garmin said no to smart rings',
+        teaser: 'Everyone is chasing the smart ring trend. Garmin looked at it, understood it, and deliberately walked away.',
+        href: '/strategy-breakdowns/garmin-smart-rings',
+      }}
     >
       <p>The beauty industry runs on mystique. Proprietary complexes. Trademarked ingredient blends. Packaging that costs more to produce than what's inside it. The entire category has spent decades making skincare feel like alchemy rather than chemistry.</p>
       <p>In 2013, Brandon Truaxe launched DECIEM and The Ordinary by doing the opposite. He listed exactly what was in each product, explained what each ingredient did, and priced everything at what it actually cost to make. Niacinamide 10% + Zinc 1% for £5. No mystique. No markup. No apology.</p>
@@ -30,8 +38,6 @@ export default function TheOrdinaryAuthenticity() {
       <p>Estée Lauder first invested in DECIEM in 2017. By May 2024 it had completed a full acquisition. The expanded distribution and R&D access are real benefits. The risk is just as real.</p>
       <p>The Ordinary's entire brand equity rests on being the anti-establishment option in a category dominated by exactly the kind of conglomerate that now owns it. Customers who chose The Ordinary partly because it wasn't Estée Lauder now have to reconcile that. As long as the formulations stay honest, the prices stay honest, and the communication stays honest, the brand can survive the acquisition. The moment any of those shift, the community will notice. And they will say so loudly, because that's what they've always done.</p>
       <p>The Ordinary taught its customers to read ingredient lists and question marketing claims. That's a double-edged gift. Estée Lauder now has to live with a customer base that is unusually well-equipped to spot when something has changed.</p>
-
-      <Link href="/strategy-breakdowns" className={styles.returnLink}>← Back to Breakdowns</Link>
     </CaseStudyLayout>
   )
 }

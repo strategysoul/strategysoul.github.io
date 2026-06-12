@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import styles from './page.module.css'
 
 export const metadata = {
   title: 'Contact | StrategySoul',
@@ -7,41 +8,56 @@ export const metadata = {
 
 export default function Contact() {
   return (
-    <main>
-      <header
-        className="masthead"
-        style={{ backgroundImage: "url('/assets/img/contact-bg.jpg')" }}
-      >
-        <div className="container position-relative px-4 px-lg-5">
-          <div className="row gx-4 gx-lg-5 justify-content-center">
-            <div className="col-md-10 col-lg-8 col-xl-7">
-              <div className="page-heading">
-                <h1>Contact Me</h1>
-                <span className="subheading">Have questions? I have answers.</span>
-              </div>
-            </div>
-          </div>
+    <main className={styles.page}>
+      <div className={styles.headerWrap}>
+        <div className={styles.header}>
+          <span className={styles.label}>Contact</span>
+          <h1 className={styles.title}>Let&apos;s talk.</h1>
+          <p className={styles.subtitle}>
+            Whether you&apos;re hiring, collaborating, or just want to talk strategy — I&apos;m reachable.
+          </p>
+          <p className={styles.availability}>
+            <span className={styles.dot} aria-hidden="true" />
+            Currently open to 1–2 consulting or advisory engagements.
+          </p>
         </div>
-      </header>
+      </div>
 
-      <div className="mb-4">
-        <div className="container px-4 px-lg-5">
-          <div className="row gx-4 gx-lg-5 justify-content-center">
-            <div className="col-md-10 col-lg-8 col-xl-7">
-              <p>The best way to reach me is via:</p>
-              <div style={{ display: 'flex', gap: '1.5rem', marginTop: '1rem', alignItems: 'center' }}>
-                <a href="mailto:swetakumaripm@gmail.com" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
-                  <Image src="/assets/img/gmail.png" alt="Gmail" width={24} height={24} />
-                  swetakumaripm@gmail.com
-                </a>
-                <a href="https://www.linkedin.com/in/swetakumaripm" target="_blank" rel="noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
-                  <Image src="/assets/img/Linkedin.png" alt="LinkedIn" width={24} height={24} />
-                  swetakumaripm
-                </a>
-              </div>
-            </div>
+      <div className={styles.body}>
+
+        {/* Hiring fast-track */}
+        <div className={styles.hiringBox}>
+          <span className={styles.hiringLabel}>Hiring?</span>
+          <p className={styles.hiringPitch}>
+            I&apos;m a product strategist with a software engineering background and an MBA from HEC Paris.
+            I work best at early-to-growth-stage companies where product, GTM, and strategy overlap —
+            and where figuring out what to build is as important as building it.
+          </p>
+          <a href="mailto:swetakumaripm@gmail.com?subject=Opportunity" className={styles.hiringCta}>
+            Send me a note →
+          </a>
+        </div>
+
+        <hr className={styles.divider} />
+
+        {/* General contact */}
+        <div className={styles.section}>
+          <span className={styles.sectionLabel}>Reach me directly</span>
+          <p className={styles.sectionText}>
+            Email is the fastest route. LinkedIn works too — I check it regularly.
+          </p>
+          <div className={styles.links}>
+            <a href="mailto:swetakumaripm@gmail.com" className={styles.link}>
+              <Image src="/assets/img/gmail.png" alt="" width={18} height={18} />
+              swetakumaripm@gmail.com
+            </a>
+            <a href="https://www.linkedin.com/in/swetakumaripm" target="_blank" rel="noreferrer" className={styles.link}>
+              <Image src="/assets/img/Linkedin.png" alt="" width={18} height={18} />
+              LinkedIn ↗
+            </a>
           </div>
         </div>
+
       </div>
     </main>
   )

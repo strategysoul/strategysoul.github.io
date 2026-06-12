@@ -1,6 +1,4 @@
-import Link from 'next/link'
 import CaseStudyLayout from '@/components/CaseStudyLayout'
-import styles from '@/components/CaseStudyLayout.module.css'
 
 export const metadata = {
   title: 'Reducing Plastics with Behavioral Nudges | StrategySoul',
@@ -13,6 +11,14 @@ export default function Plastic() {
       tag="Behavioral Strategy · HEC Paris"
       title="Why India's Plastic Ban Flopped (and What We Could Do Instead)"
       date="September 16, 2025"
+      readTime="5 min read"
+      bottomLine="Bans don't change behavior — they change who gets to break the rules. If you want people to stop doing something, make the alternative more immediately rewarding. Linking plastic avoidance to credit scores turns a distant moral argument into a local financial incentive. That's the difference between a policy and a nudge."
+      nextRead={{
+        tag: 'AI Research · Huscribe',
+        title: "I tested 12 transcription models so you don't have to",
+        teaser: '12 models. 5 providers. 50 clips. Whisper won, AssemblyAI surprised everyone.',
+        href: '/transcription-benchmark',
+      }}
     >
       <p>India has a plastic problem. In 2021, the average Indian used somewhere between <strong>750 and 2143 plastic bags a year</strong>. Compare that to France, where people use just <strong>77 bags per person</strong>. That&apos;s not a gap, that&apos;s a canyon. And if the OECD is right, India&apos;s plastic use could <strong>quadruple by 2050</strong>, reaching around 160 million tons by 2060. Basically, enough plastic to wrap the planet like cling film.</p>
       <img src="/assets/img/stat_plastic.png" alt="Plastic usage statistics" />
@@ -74,8 +80,6 @@ export default function Plastic() {
       <h2>Final Thought</h2>
       <p>India&apos;s plastic consumption is skyrocketing. A ban alone won&apos;t solve it. History and psychology say so. But if avoiding plastic helps you get that home loan or tip your credit score in the right direction? That might just work.</p>
       <p>Because honestly, nobody wants to live in a country topping the charts for <strong>160 million tons of plastic waste</strong>.</p>
-
-      <Link href="/#work" className={styles.returnLink}>← Back to Work</Link>
     </CaseStudyLayout>
   )
 }

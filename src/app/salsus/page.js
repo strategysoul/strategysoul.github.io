@@ -1,6 +1,4 @@
-import Link from 'next/link'
 import CaseStudyLayout from '@/components/CaseStudyLayout'
-import styles from '@/components/CaseStudyLayout.module.css'
 
 export const metadata = {
   title: 'Cracking the French Market for Salsus | StrategySoul',
@@ -13,6 +11,14 @@ export default function Salsus() {
       tag="GTM Strategy · HEC Paris"
       title="Cracking the French Market for Salsus: A Broth-y Challenge"
       date="September 18, 2025"
+      readTime="7 min read"
+      bottomLine="Entering a market that takes cultural pride in doing exactly what you're trying to replace requires more than a good product — it needs a fundamentally different frame. 'We save time so you can create more' is a very different sentence from 'we replace your craft'. The gap between those two is the entire GTM strategy."
+      nextRead={{
+        tag: 'Behavioral Strategy · HEC Paris',
+        title: "Why India's Plastic Ban Flopped",
+        teaser: "India's plastic ban failed. We asked why, and proposed something smarter than punishment.",
+        href: '/plastic',
+      }}
     >
       <p><strong>Salsus.</strong> No, that&apos;s not a typo for &quot;salsa.&quot; It&apos;s a premium stock and broth brand from Norway. Until recently, their market was pretty simple: Norway and Denmark. But then came the big idea: France. The land of sauces, brasseries, Michelin stars, and also… chefs who don&apos;t exactly like being told how to cook.</p>
       <p>So, Salsus knocked on our doors at HEC with one clear ask:<br /><em>&quot;Help us build our go-to-market strategy for France.&quot;</em></p>
@@ -96,8 +102,6 @@ export default function Salsus() {
 
       <h2>Final Takeaway</h2>
       <p>The French market isn&apos;t easy to crack. You can&apos;t just show up with a broth and say, Voilà. But with the right positioning, storytelling, and a little nudge psychology, watch Salsus make it happen.</p>
-
-      <Link href="/#work" className={styles.returnLink}>← Back to Work</Link>
     </CaseStudyLayout>
   )
 }

@@ -1,6 +1,4 @@
-import Link from 'next/link'
 import CaseStudyLayout from '@/components/CaseStudyLayout'
-import styles from '@/components/CaseStudyLayout.module.css'
 
 export const metadata = {
   title: 'Why Garmin Said No to Smart Rings | StrategySoul',
@@ -13,6 +11,16 @@ export default function GarminSmartRings() {
       tag="Strategy · Wearables"
       title="Why Garmin Said No to Smart Rings"
       date="November 2024"
+      readTime="6 min read"
+      backHref="/strategy-breakdowns"
+      backLabel="← Back to Breakdowns"
+      bottomLine="The hardest product decision isn't what to build — it's what not to build when the market is clearly telling you to. Garmin's 'no' to smart rings is a masterclass in protecting a brand by resisting the slide deck. If the technology catches up, the calculus shifts. Until then, the 'no' holds."
+      nextRead={{
+        tag: 'Strategy · Consumer Brands',
+        title: "Nike's brand is at a crossroads",
+        teaser: 'Nike spends $4 billion a year on ads. Its brand is still losing ground. Three things got it here.',
+        href: '/strategy-breakdowns/nike-brand-crossroads',
+      }}
     >
       <p>The smart ring market is having a moment. Samsung launched the Galaxy Ring. Oura raised at a $5.2B valuation. Every wearable brand is being asked the same question: are you building one?</p>
       <p>Garmin's answer is no. And unlike most "no" decisions in tech, this one is worth examining. Because it's not timid. It's precise.</p>
@@ -37,8 +45,6 @@ export default function GarminSmartRings() {
       <h2>What Would Change Their Mind</h2>
       <p>The category isn't permanently closed. If battery density improves significantly, if GPS miniaturisation reaches ring-scale, if sensors become accurate enough at the finger to meet Garmin's standards, the calculus shifts. At that point a Garmin ring wouldn't be a trend play. It would be a genuine performance product for their existing audience, something to wear during sleep or recovery when a watch feels like too much.</p>
       <p>Until then, the "no" holds. And it should.</p>
-
-      <Link href="/strategy-breakdowns" className={styles.returnLink}>← Back to Breakdowns</Link>
     </CaseStudyLayout>
   )
 }

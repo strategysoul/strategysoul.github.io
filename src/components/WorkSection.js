@@ -8,6 +8,7 @@ const projects = [
     href: '/transcription-benchmark',
     image: '/assets/img/accents.jpg',
     tag: 'AI Research · Huscribe',
+    readTime: '8 min read',
   },
   {
     title: 'Test Data Management Tool at Dell',
@@ -15,6 +16,7 @@ const projects = [
     href: '/tdmt',
     image: '/assets/img/award.png',
     tag: 'Product · Dell Technologies',
+    readTime: 'Coming soon',
   },
   {
     title: 'Reducing plastics using behavioral nudges',
@@ -22,6 +24,7 @@ const projects = [
     href: '/plastic',
     image: '/assets/img/2.jpg',
     tag: 'Behavioral Strategy · HEC Paris',
+    readTime: '5 min read',
   },
   {
     title: 'Branding strategy for Salsus',
@@ -29,6 +32,7 @@ const projects = [
     href: '/salsus',
     image: '/assets/img/salsus.png',
     tag: 'GTM Strategy · HEC Paris',
+    readTime: '7 min read',
   },
   {
     title: 'AR Office Navigator',
@@ -36,6 +40,7 @@ const projects = [
     href: '/arnavi',
     image: '/assets/img/s1.png',
     tag: 'Innovation · Dell Technologies',
+    readTime: 'Coming soon',
   },
 ]
 

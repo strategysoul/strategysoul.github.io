@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import styles from './ProjectCard.module.css'
 
-export default function ProjectCard({ title, teaser, href, image, tag, index = 0 }) {
+export default function ProjectCard({ title, teaser, href, image, tag, readTime, index = 0 }) {
   return (
     <motion.div
       className={styles.card}
@@ -26,7 +26,10 @@ export default function ProjectCard({ title, teaser, href, image, tag, index = 0
           <div className={styles.overlay} aria-hidden="true" />
         </div>
         <div className={styles.body}>
-          <span className={styles.tag}>{tag}</span>
+          <div className={styles.tagRow}>
+              <span className={styles.tag}>{tag}</span>
+              {readTime && <span className={styles.readTime}>{readTime}</span>}
+            </div>
           <h3 className={styles.title}>{title}</h3>
           <p className={styles.teaser}>{teaser}</p>
           <span className={styles.cta}>Read case study →</span>

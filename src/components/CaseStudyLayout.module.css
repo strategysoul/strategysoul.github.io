@@ -47,6 +47,19 @@
 .meta {
   font-size: 0.85rem;
   color: var(--ink-muted);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.readTime {
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  background: var(--accent-light);
+  color: var(--accent);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
 }
 
 /* Article body */
@@ -160,6 +173,32 @@
 }
 
 .body a:hover { opacity: 0.8; }
+
+/* Bottom Line block — Peak-End Rule */
+.bottomLine {
+  margin-top: 3rem;
+  border-left: 3px solid var(--accent);
+  background: var(--accent-light);
+  padding: 1.25rem 1.5rem;
+}
+
+.bottomLineLabel {
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.bottomLine p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--ink);
+  font-style: italic;
+  margin-bottom: 0 !important;
+}
 
 .returnLink {
   display: inline-block;

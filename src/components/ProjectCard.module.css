@@ -42,11 +42,24 @@
   flex: 1;
 }
 
+.tagRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
 .tag {
   font-size: 0.7rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--accent);
+}
+
+.readTime {
+  font-size: 0.7rem;
+  color: var(--ink-muted);
+  white-space: nowrap;
 }
 
 .title {

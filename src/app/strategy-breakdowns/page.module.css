@@ -64,11 +64,24 @@
   transform: translateY(-4px);
 }
 
+.cardTagRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
 .cardTag {
   font-size: 0.7rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--accent);
+}
+
+.cardReadTime {
+  font-size: 0.7rem;
+  color: var(--ink-muted);
+  white-space: nowrap;
 }
 
 .cardTitle {

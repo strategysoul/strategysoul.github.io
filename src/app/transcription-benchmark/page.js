@@ -1,6 +1,4 @@
-import Link from 'next/link'
 import CaseStudyLayout from '@/components/CaseStudyLayout'
-import styles from '@/components/CaseStudyLayout.module.css'
 
 export const metadata = {
   title: 'Transcription Model Benchmark | StrategySoul',
@@ -13,6 +11,14 @@ export default function TranscriptionBenchmark() {
       tag="AI Research · Huscribe"
       title="I Tested 12 Transcription Models So You Don't Have To"
       date="April 29, 2026"
+      readTime="8 min read"
+      bottomLine="The winner of a benchmark isn't always the right answer for production. Whisper-1 leads on accuracy, but the real product insight came from an edge case it couldn't solve: models silently switching languages on culturally ambiguous names. The architecture that shipped wasn't the best single model — it was redundancy designed around the failure mode."
+      nextRead={{
+        tag: 'GTM Strategy · HEC Paris',
+        title: 'Branding strategy for Salsus',
+        teaser: 'A Norwegian premium broth brand wanted to crack the French market. French chefs disagreed. We found a way.',
+        href: '/salsus',
+      }}
     >
       <p>Every voice-AI product has the same dirty secret: it&apos;s only as good as its transcription layer. You can have the most sophisticated intent detection, the smartest sales coaching engine, the cleanest UI. Doesn&apos;t matter. If the model hears &quot;we&apos;re willing to pivot&quot; as &quot;we&apos;re willing to visit,&quot; the whole downstream experience falls apart. And in a sales context, one mis-transcribed sentence can flip a deal.</p>
       <p>So I ran a benchmark. Not a vibe check. An actual benchmark: 12 models, 5 providers, 50 audio clips, one metric. Here&apos;s what happened.</p>
@@ -86,8 +92,6 @@ export default function TranscriptionBenchmark() {
       <img src="/assets/img/transcript.jpeg" alt="Transcript output example" />
       <p>So the architecture I landed on uses three models in sequence. Whisper handles language detection first. Once the language is confirmed, GPT-4o Transcribe runs the actual transcription anchored to that language. A third model (Gemini, once quota allows) cross-checks the output. If the two transcriptions diverge beyond a confidence threshold, the user gets to resolve the difference. If they agree, the higher-confidence result goes through.</p>
       <p>It&apos;s more expensive than picking a winner and shipping it. But for a sales tool where one mis-transcribed name can derail a deal, the redundancy is the product.</p>
-
-      <Link href="/#work" className={styles.returnLink}>← Back to Work</Link>
     </CaseStudyLayout>
   )
 }

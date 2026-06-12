@@ -1,8 +1,14 @@
 .footer {
   background: var(--bg-dark);
   color: #C8B9A8;
-  padding: 4rem 2rem;
+  padding: 0 2rem 4rem;
   text-align: center;
+}
+
+.newsletter {
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: 3rem 2rem;
+  margin-bottom: 3rem;
 }
 
 .cta {
