@@ -18,7 +18,7 @@ export default function AboutSection() {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          About Me
+          <span className={styles.num}>№ 01</span> · About Me
         </motion.div>
 
         <div className={styles.grid}>
@@ -30,7 +30,21 @@ export default function AboutSection() {
             viewport={{ once: true }}
           >
             <blockquote className={styles.quote}>
-              &ldquo;I build products, analyse businesses, and handle ambiguity. Not because someone told me to, but because chaos genuinely excites me.&rdquo;
+              I build products, analyse businesses, and handle ambiguity. Not because someone told me to, but because{' '}
+              <em
+                className={styles.chaosTrigger}
+                role="button"
+                tabIndex={0}
+                title="go on, click it"
+                onClick={() => window.dispatchEvent(new CustomEvent('chaos:unleash'))}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault()
+                    window.dispatchEvent(new CustomEvent('chaos:unleash'))
+                  }
+                }}
+              >chaos</em>{' '}
+              genuinely excites me.
             </blockquote>
           </motion.div>
 

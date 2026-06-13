@@ -4,10 +4,10 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import styles from './ProjectCard.module.css'
 
-export default function ProjectCard({ title, teaser, href, image, tag, readTime, index = 0 }) {
+export default function ProjectCard({ title, teaser, href, image, tag, readTime, index = 0, featured = false }) {
   return (
     <motion.div
-      className={styles.card}
+      className={`${styles.card} ${featured ? styles.featured : ''}`}
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}

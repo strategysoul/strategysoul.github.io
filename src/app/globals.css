@@ -39,3 +39,20 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+::selection {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Chaos mode: the whole page leans off its axis while elements scatter */
+body.chaos-active main {
+  transform: rotate(-0.6deg);
+  transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.chaos-active main {
+    transform: none;
+  }
+}

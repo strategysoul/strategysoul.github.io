@@ -1,6 +1,8 @@
 import { Playfair_Display, DM_Sans } from 'next/font/google'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import CommandPalette from '@/components/CommandPalette'
+import CuriosityHunt from '@/components/CuriosityHunt'
 import './globals.css'
 
 const playfair = Playfair_Display({
@@ -31,6 +33,8 @@ export default function RootLayout({ children }) {
         <Navbar />
         {children}
         <Footer />
+        <CommandPalette />
+        <CuriosityHunt />
       </body>
     </html>
   )

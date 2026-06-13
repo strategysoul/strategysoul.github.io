@@ -3,12 +3,12 @@ import { motion } from 'framer-motion'
 import styles from './InterestsSection.module.css'
 
 const interests = [
-  { icon: '✍', label: 'Poetry', desc: 'Writing precisely is a skill. Useful in PRDs, even more useful in pitch decks.' },
-  { icon: '📖', label: 'Reading', desc: 'Fuels most of my strategic thinking. Also responsible for the commute money I don\'t have.' },
-  { icon: '🥋', label: 'Martial Arts', desc: 'Systems thinking in real time. Also useful when roadmaps get derailed.' },
-  { icon: '✈', label: 'Travelling', desc: 'The fastest way to understand that your assumptions about people are wrong.' },
-  { icon: '🚴', label: 'Cycling', desc: 'Long rides. Good for problems that don\'t have obvious answers yet.' },
-  { icon: '🏋', label: 'Fitness', desc: 'Discipline that shows up everywhere else, whether you want it to or not.' },
+  { icon: '✳', label: 'Poetry', desc: 'Writing precisely is a skill. Useful in PRDs, even more useful in pitch decks.' },
+  { icon: '●', label: 'Reading', desc: 'Fuels most of my strategic thinking. Also responsible for the commute money I don\'t have.' },
+  { icon: '▲', label: 'Martial Arts', desc: 'Systems thinking in real time. Also useful when roadmaps get derailed.' },
+  { icon: '◆', label: 'Travelling', desc: 'The fastest way to understand that your assumptions about people are wrong.' },
+  { icon: '◯', label: 'Cycling', desc: 'Long rides. Good for problems that don\'t have obvious answers yet.' },
+  { icon: '■', label: 'Fitness', desc: 'Discipline that shows up everywhere else, whether you want it to or not.' },
 ]
 
 export default function InterestsSection() {
@@ -22,8 +22,9 @@ export default function InterestsSection() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           viewport={{ once: true }}
         >
-          <span className={styles.label}>Beyond Work</span>
-          <h2 className={styles.title}>Things that keep me sane<br />(and occasionally tired).</h2>
+          <span className={styles.label}><span className={styles.num}>№ 04</span> · Beyond Work</span>
+          <h2 className={styles.title}>Things that keep me <em>sane</em><br />(and occasionally tired).</h2>
+          <span className={styles.ghostNum} aria-hidden="true">04</span>
         </motion.div>
 
         <div className={styles.grid}>

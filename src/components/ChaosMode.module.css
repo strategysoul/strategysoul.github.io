@@ -1,0 +1,38 @@
+.restore {
+  position: fixed;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  background: var(--bg-dark);
+  color: #FAF8F4;
+  border: 1.5px solid var(--accent);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.05rem;
+  padding: 0.9rem 1.9rem;
+  cursor: pointer;
+  box-shadow: 8px 8px 0 var(--accent);
+  animation: popIn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.restore:hover {
+  transform: translateX(-50%) translateY(-3px);
+  box-shadow: 11px 11px 0 var(--accent);
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(30px) rotate(-4deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) rotate(0deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .restore { animation: none; }
+}

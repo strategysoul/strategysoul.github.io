@@ -16,6 +16,26 @@
   box-shadow: 0 1px 0 var(--border);
 }
 
+.nav.dark {
+  background: var(--bg-dark);
+}
+
+.nav.dark .logo {
+  color: var(--accent);
+}
+
+.nav.dark .links a {
+  color: rgba(245, 241, 235, 0.7);
+}
+
+.nav.dark .links a:hover {
+  color: #FAF8F4;
+}
+
+.nav.dark .hamburger span {
+  background: rgba(245, 241, 235, 0.8);
+}
+
 .logo {
   font-family: var(--font-display);
   font-size: 1.3rem;
@@ -92,4 +112,11 @@
   }
   .links.open { display: flex; }
   .links a { font-size: 1.1rem; }
+
+  /* full-screen menu sits on a light overlay, so force dark links/icon
+     even when the navbar is in its dark (homepage hero) state */
+  .links.open a,
+  .nav.dark .links.open a { color: var(--ink); }
+  .nav.dark .links.open a:hover { color: var(--accent); }
+  .nav.dark .hamburger.open span { background: var(--ink); }
 }

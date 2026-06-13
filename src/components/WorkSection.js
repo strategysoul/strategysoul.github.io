@@ -49,12 +49,13 @@ export default function WorkSection() {
     <section className={styles.section} id="work">
       <div className={styles.inner}>
         <div className={styles.header}>
-          <span className={styles.label}>Selected Work</span>
-          <h2 className={styles.title}>Things I&apos;ve built,<br />broken, and fixed.</h2>
+          <span className={styles.label}><span className={styles.num}>№ 03</span> · Selected Work</span>
+          <h2 className={styles.title}>Things I&apos;ve built,<br /><em>broken</em>, and fixed.</h2>
+          <span className={styles.ghostNum} aria-hidden="true">03</span>
         </div>
         <div className={styles.grid}>
           {projects.map((p, i) => (
-            <ProjectCard key={p.href} {...p} index={i} />
+            <ProjectCard key={p.href} {...p} index={i} featured={i === 0} />
           ))}
         </div>
       </div>

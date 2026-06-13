@@ -1,4 +1,6 @@
 import HeroSection from '@/components/HeroSection'
+import Marquee from '@/components/Marquee'
+import ChaosMode from '@/components/ChaosMode'
 import AboutSection from '@/components/AboutSection'
 import JourneySection from '@/components/JourneySection'
 import WorkSection from '@/components/WorkSection'
@@ -11,12 +13,14 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <>
+    <main>
+      <ChaosMode />
       <HeroSection />
+      <Marquee />
       <AboutSection />
       <JourneySection />
       <WorkSection />
       <InterestsSection />
-    </>
+    </main>
   )
 }

@@ -2,6 +2,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import ArtPlayground from './ArtPlayground'
 import styles from './HeroSection.module.css'
 
 const ease = [0.22, 1, 0.36, 1]
@@ -9,6 +10,7 @@ const ease = [0.22, 1, 0.36, 1]
 export default function HeroSection() {
   return (
     <section className={styles.hero} id="hero">
+      <ArtPlayground />
       <div className={styles.text}>
         <motion.p
           className={styles.eyebrow}
@@ -25,7 +27,8 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1, ease }}
         >
-          Sweta<br />Kumari
+          Sweta
+          <span className={styles.nameOutline}>Kumari</span>
         </motion.h1>
 
         <motion.p
@@ -34,7 +37,7 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2, ease }}
         >
-          I sit at the intersection of tech, strategy, and product.
+          I sit at the <em className={styles.taglineAccent}>intersection</em> of tech, strategy, and product.
           I enjoy building things that actually make sense to humans.
         </motion.p>
 
@@ -72,6 +75,9 @@ export default function HeroSection() {
           className={styles.photo}
         />
         <div className={styles.accentBox} aria-hidden="true" />
+        <div className={styles.ring} aria-hidden="true" />
+        <span className={styles.star} aria-hidden="true">✳</span>
+        <div className={styles.dotGrid} aria-hidden="true" />
       </motion.div>
     </section>
   )

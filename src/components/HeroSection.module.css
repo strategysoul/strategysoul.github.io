@@ -1,6 +1,7 @@
 .hero {
+  position: relative;
   min-height: calc(100vh - 72px);
-  background: var(--bg);
+  background: var(--bg-dark);
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   align-items: center;
@@ -9,9 +10,11 @@
   overflow: hidden;
 }
 
+.text { position: relative; z-index: 1; }
+
 .eyebrow {
   font-size: 0.75rem;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--accent);
   margin-bottom: 1.25rem;
@@ -19,20 +22,33 @@
 
 .name {
   font-family: var(--font-display);
-  font-size: clamp(4.5rem, 9vw, 8rem);
+  font-size: clamp(4.5rem, 10vw, 9rem);
   font-weight: 700;
-  line-height: 0.95;
-  color: var(--ink);
+  line-height: 0.9;
+  color: #FAF8F4;
   margin-bottom: 1.75rem;
   letter-spacing: -0.02em;
 }
 
+.nameOutline {
+  display: block;
+  -webkit-text-stroke: 2px #FAF8F4;
+  color: transparent;
+}
+
 .tagline {
   font-size: 1.05rem;
-  color: var(--ink-muted);
+  color: rgba(245, 241, 235, 0.6);
   max-width: 42ch;
   line-height: 1.65;
   margin-bottom: 2.5rem;
+}
+
+.taglineAccent {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.15em;
+  color: var(--accent);
 }
 
 .ctas {
@@ -55,25 +71,29 @@
 .ctaPrimary:hover { background: #a85025; }
 
 .ctaSecondary {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
   font-size: 0.875rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--ink);
-  border-bottom: 1px solid var(--border);
+  color: rgba(245, 241, 235, 0.6);
+  border-bottom: 1px solid rgba(245, 241, 235, 0.2);
   padding-bottom: 2px;
   transition: border-color 0.2s, color 0.2s;
 }
 
 .ctaSecondary:hover {
-  color: var(--accent);
-  border-color: var(--accent);
+  color: #FAF8F4;
+  border-color: rgba(245, 241, 235, 0.5);
 }
 
 .socialLogo {
   display: inline-block;
   vertical-align: middle;
-  margin-right: 0.35rem;
   object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.6;
 }
 
 .imageWrap {
@@ -90,6 +110,7 @@
   object-position: top;
   position: relative;
   z-index: 1;
+  border-radius: 999px 999px 0 0;
 }
 
 .accentBox {
@@ -98,8 +119,51 @@
   right: -1.5rem;
   width: 60%;
   height: 60%;
-  background: var(--accent-light);
+  background: var(--accent);
   z-index: 0;
+  opacity: 0.5;
+  border-radius: 999px 999px 0 0;
+}
+
+.ring {
+  position: absolute;
+  top: -2.5rem;
+  left: -3rem;
+  width: 110px;
+  height: 110px;
+  border: 1.5px solid rgba(245, 241, 235, 0.25);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.star {
+  position: absolute;
+  top: -1.25rem;
+  right: -2.5rem;
+  font-size: 2.25rem;
+  line-height: 1;
+  color: var(--accent);
+  z-index: 2;
+  animation: spin 14s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.dotGrid {
+  position: absolute;
+  bottom: -3rem;
+  left: -4.5rem;
+  width: 120px;
+  height: 90px;
+  background-image: radial-gradient(rgba(245, 241, 235, 0.3) 1.5px, transparent 1.5px);
+  background-size: 15px 15px;
+  z-index: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .star { animation: none; }
 }
 
 @media (max-width: 1024px) {
@@ -123,4 +187,7 @@
   }
   .photo { max-width: 100%; }
   .accentBox { display: none; }
+  .ring { left: -1.5rem; top: -1.5rem; width: 70px; height: 70px; }
+  .star { right: -1.75rem; font-size: 1.75rem; }
+  .dotGrid { display: none; }
 }

@@ -5,7 +5,8 @@
 }
 
 .card:hover {
-  box-shadow: 0 16px 48px rgba(28, 22, 14, 0.1);
+  box-shadow: 10px 10px 0 var(--accent);
+  border-color: var(--ink);
 }
 
 .inner {
@@ -87,3 +88,70 @@
 }
 
 .card:hover .cta { letter-spacing: 0.1em; }
+
+/* Featured card: full-width horizontal layout */
+.featured {
+  background: var(--bg-dark);
+  border-color: transparent;
+}
+
+.featured .inner {
+  flex-direction: row;
+}
+
+.featured .imageWrap {
+  width: 46%;
+  flex-shrink: 0;
+  aspect-ratio: auto;
+  min-height: 380px;
+}
+
+.featured .body {
+  padding: 2.75rem 2.75rem 2.75rem 2.5rem;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.featured .tag {
+  color: var(--accent);
+}
+
+.featured .readTime {
+  color: rgba(245, 241, 235, 0.4);
+}
+
+.featured .title {
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  color: #FAF8F4;
+  line-height: 1.2;
+}
+
+.featured .teaser {
+  font-size: 1rem;
+  color: rgba(245, 241, 235, 0.6);
+  line-height: 1.7;
+}
+
+.featured .cta {
+  color: var(--accent);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+}
+
+.featured:hover {
+  box-shadow: 10px 10px 0 var(--accent);
+}
+
+@media (max-width: 768px) {
+  .featured .inner {
+    flex-direction: column;
+  }
+  .featured .imageWrap {
+    width: 100%;
+    min-height: auto;
+    aspect-ratio: 16/9;
+  }
+  .featured .body {
+    padding: 1.75rem;
+  }
+}
