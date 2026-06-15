@@ -11,6 +11,14 @@ const projects = [
     readTime: '8 min read',
   },
   {
+    title: 'I timed 12 transcription models so you don\'t have to',
+    teaser: 'Accuracy tells you which model is right. Latency tells you which one ships. gpt-4o-mini-transcribe won both. Here\'s the full timing benchmark.',
+    href: '/transcription-latency',
+    image: '/assets/img/accents.jpg',
+    tag: 'AI Research · Huscribe',
+    readTime: '6 min read',
+  },
+  {
     title: 'Test Data Management Tool at Dell',
     teaser: '12,000 SKUs tested per month, 45 minutes each. I automated it, earned CIO recognition, then figured out the harder problem: why engineers weren\'t using it.',
     href: '/tdmt',

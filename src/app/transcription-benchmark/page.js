@@ -20,8 +20,8 @@ export default function TranscriptionBenchmark() {
         href: '/salsus',
       }}
     >
-      <p>Every voice-AI product has the same dirty secret: it&apos;s only as good as its transcription layer. You can have the most sophisticated intent detection, the smartest sales coaching engine, the cleanest UI. Doesn&apos;t matter. If the model hears &quot;we&apos;re willing to pivot&quot; as &quot;we&apos;re willing to visit,&quot; the whole downstream experience falls apart. And in a sales context, one mis-transcribed sentence can flip a deal.</p>
-      <p>So I ran a benchmark. Not a vibe check. An actual benchmark: 12 models, 5 providers, 50 audio clips, one metric. Here&apos;s what happened.</p>
+      <p>Almost every transcription benchmark tests crisp, American-accented English recorded in a silent room. Which is adorable, because no real sales call has ever sounded like that.</p>
+      <p>Here&apos;s the thing every voice-AI product quietly hopes you won&apos;t notice: it&apos;s only as good as its transcription layer. The smartest coaching engine in the world is dead weight if the model hears &quot;we&apos;re willing to pivot&quot; as &quot;we&apos;re willing to visit.&quot; One wrong word, one flipped deal. So instead of trusting twelve marketing pages that all somehow claim to be state of the art, I did the unreasonable thing and actually tested them: 12 models, 5 providers, 50 clips of gloriously accented English, one metric, zero vibes. Here&apos;s what happened.</p>
 
       <h2>What I Was Trying to Answer</h2>
       <p>Simple question: <em>which transcription model should Huscribe bet on?</em></p>
@@ -59,19 +59,16 @@ export default function TranscriptionBenchmark() {
           <tr><td>azure-speech</td><td>Azure</td><td>6.3%</td><td>10.7%</td><td><strong>8.5%</strong></td></tr>
           <tr><td>deepgram-nova-3</td><td>Deepgram</td><td>7.2%</td><td>10.7%</td><td><strong>9.0%</strong></td></tr>
           <tr><td>deepgram-nova-2</td><td>Deepgram</td><td>11.7%</td><td>9.3%</td><td><strong>10.5%</strong></td></tr>
-          <tr><td>gemini-2.5-pro</td><td>Google</td><td>n/a</td><td>n/a</td><td>quota error</td></tr>
-          <tr><td>gemini-2.5-flash</td><td>Google</td><td>n/a</td><td>n/a</td><td>quota error</td></tr>
-          <tr><td>gemini-3.1-pro-preview</td><td>Google</td><td>n/a</td><td>n/a</td><td>quota error</td></tr>
         </tbody>
       </table>
 
       <h2>What This Actually Means</h2>
-      <p><strong>1. Whisper-1 is still the benchmark.</strong> The oldest model in the test. Also the cheapest. Also best, averaged across 50 clips. 2.7% WER across both accent groups, with almost no spread between them. At that error rate, the mistakes are things like adding a definite article before a noun. Across 25 clips per group, that consistency is meaningful. There&apos;s no accuracy argument for paying more right now.</p>
+      <p><strong>1. Whisper-1 is still the benchmark.</strong> The oldest model in the test. Also the cheapest. Also, to the visible irritation of everyone who shipped something newer and pricier, the best, averaged across 50 clips. 2.7% WER across both accent groups, with almost no spread between them. At that error rate the mistakes are things like sneaking in a definite article before a noun, not derailing a sentence. There&apos;s no accuracy argument for paying more right now.</p>
       <p><strong>2. AssemblyAI came out of nowhere.</strong> <code>assemblyai-universal-3-pro</code> finished third overall at 4.0% average, ahead of two OpenAI variants and every Google model I could test. It matched whisper-1 on French across all 25 clips. The German result dragged it down, but it still beat Azure and Deepgram convincingly. Nobody had this on their bingo card.</p>
       <p><strong>3. GPT-4o-transcribe is inconsistent.</strong> Its French average came in at 6.3%, well above gpt-4o-mini-transcribe at 2.7% on the same set. Averaged across 25 clips, that gap is hard to dismiss as noise. gpt-4o-mini is not just cheaper; it&apos;s more predictable. For a production system, predictability matters as much as peak accuracy.</p>
-      <p><strong>4. Accent robustness is the real differentiator.</strong> Every single model performed worse on the German clips than the French. The gap was zero for whisper-1. For everyone else it was real: Azure went from 6.3% to 10.7%, AssemblyAI universal-2 from 2.7% to 9.3%. Averaged across 25 speakers rather than one, these gaps have held up. French is a passing grade. German is the actual exam.</p>
-      <p><strong>5. Deepgram is a disappointment.</strong> nova-3 finished 8th at 9.0%, nova-2 last at 10.5%. Across 25 clips per accent, both models also strip all punctuation and output lowercase consistently, which means post-processing is a hard dependency, not an edge case. That&apos;s a real production cost.</p>
-      <p><strong>6. Azure is fine, but not special.</strong> 8.5% average, below three providers with newer and cheaper models. The German accent result (10.7% averaged across 25 clips) is particularly hard to defend for an enterprise sales use case. The enterprise positioning and the accuracy don&apos;t match.</p>
+      <p><strong>4. Accent robustness is the real differentiator.</strong> Every single model did worse on the German clips than the French ones. Whisper-1 didn&apos;t flinch; everyone else did. Azure slid from 6.3% to 10.7%, AssemblyAI universal-2 from 2.7% to 9.3%. French, it turns out, is the practice test. German is the actual exam, and most models clearly skipped the revision.</p>
+      <p><strong>5. Deepgram is a disappointment.</strong> nova-3 finished 8th at 9.0%, nova-2 dead last at 10.5%. And both hand you back lowercase text with no punctuation, like a teenager texting, so post-processing isn&apos;t an edge case you might hit, it&apos;s a bill you will definitely pay.</p>
+      <p><strong>6. Azure is fine, but not special.</strong> 8.5% average, behind three providers with newer and cheaper models. The 10.7% on German is a tough thing to put on an enterprise sales deck. The premium positioning and the actual accuracy are not on speaking terms.</p>
 
       <h2>A Note on Variance</h2>
       <p>Because I&apos;m reporting averages across 25 clips per group, individual model non-determinism is largely smoothed out. What you&apos;re seeing in the table is stable, representative performance, not a single lucky or unlucky run. The rankings held across multiple full passes of the benchmark. The scores are trustworthy enough to act on.</p>
