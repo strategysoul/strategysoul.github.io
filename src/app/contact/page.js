@@ -18,7 +18,7 @@ export default function Contact() {
           </p>
           <p className={styles.availability}>
             <span className={styles.dot} aria-hidden="true" />
-            Currently open to 1–2 consulting or advisory engagements.
+            Open to product roles and 1–2 advisory engagements.
           </p>
         </div>
       </div>
@@ -29,9 +29,10 @@ export default function Contact() {
         <div className={styles.hiringBox}>
           <span className={styles.hiringLabel}>Hiring?</span>
           <p className={styles.hiringPitch}>
-            I&apos;m a product strategist with a software engineering background and an MBA from HEC Paris.
-            I work best at early-to-growth-stage companies where product, GTM, and strategy overlap —
-            and where figuring out what to build is as important as building it.
+            I&apos;m a product manager with a software engineering background and an MBA from HEC Paris.
+            I&apos;m open to full-time product roles and select advisory engagements, and I work best at
+            early-to-growth-stage companies where product, GTM, and strategy overlap, where figuring out
+            what to build matters as much as building it.
           </p>
           <a href="mailto:swetakumaripm@gmail.com?subject=Opportunity" className={styles.hiringCta}>
             Send me a note →

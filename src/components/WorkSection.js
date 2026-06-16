@@ -19,14 +19,6 @@ const projects = [
     readTime: '6 min read',
   },
   {
-    title: 'Test Data Management Tool at Dell',
-    teaser: '12,000 SKUs tested per month, 45 minutes each. I automated it, earned CIO recognition, then figured out the harder problem: why engineers weren\'t using it.',
-    href: '/tdmt',
-    image: '/assets/img/award.png',
-    tag: 'Product · Dell Technologies',
-    readTime: 'Coming soon',
-  },
-  {
     title: 'Reducing plastics using behavioral nudges',
     teaser: 'India\'s plastic ban flopped. We asked why, and proposed something smarter than punishment. The founder of BVA Nudge Consulting called it impressive.',
     href: '/plastic',
@@ -41,6 +33,14 @@ const projects = [
     image: '/assets/img/salsus.png',
     tag: 'GTM Strategy · HEC Paris',
     readTime: '7 min read',
+  },
+  {
+    title: 'Test Data Management Tool at Dell',
+    teaser: '12,000 SKUs tested per month, 45 minutes each. I automated it, earned CIO recognition, then figured out the harder problem: why engineers weren\'t using it.',
+    href: '/tdmt',
+    image: '/assets/img/award.png',
+    tag: 'Product · Dell Technologies',
+    readTime: 'Coming soon',
   },
   {
     title: 'AR Office Navigator',

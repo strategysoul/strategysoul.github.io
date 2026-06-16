@@ -13,12 +13,13 @@ export default function HeroSection() {
       <ArtPlayground />
       <div className={styles.text}>
         <motion.p
-          className={styles.eyebrow}
+          className={styles.availability}
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease }}
         >
-          Product · Strategy · People
+          <span className={styles.dot} aria-hidden="true" />
+          Open to product roles &amp; select advisory work
         </motion.p>
 
         <motion.h1
@@ -32,22 +33,34 @@ export default function HeroSection() {
         </motion.h1>
 
         <motion.p
-          className={styles.tagline}
+          className={styles.positioning}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2, ease }}
         >
-          I sit at the <em className={styles.taglineAccent}>intersection</em> of tech, strategy, and product.
-          I enjoy building things that actually make sense to humans.
+          Product Manager building <em className={styles.positioningAccent}>0-to-1 voice AI</em>.
+          Engineer turned strategist, shipping things that make sense to humans.
         </motion.p>
+
+        <motion.ul
+          className={styles.cred}
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3, ease }}
+        >
+          <li className={styles.credItem}>ex-Dell</li>
+          <li className={styles.credItem}>MBA, HEC Paris</li>
+          <li className={styles.credItem}>PM @ Humai</li>
+        </motion.ul>
 
         <motion.div
           className={styles.ctas}
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.35, ease }}
+          transition={{ duration: 0.6, delay: 0.4, ease }}
         >
           <Link href="/#work" className={styles.ctaPrimary}>View Work</Link>
+          <Link href="/contact" className={styles.ctaSecondary}>Get in touch ↗</Link>
           <a
             href="https://www.linkedin.com/in/swetakumaripm"
             target="_blank"
