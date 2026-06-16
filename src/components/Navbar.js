@@ -18,16 +18,27 @@ export default function Navbar() {
   }, [])
 
   // Lock background scroll while the full-screen mobile menu is open, and
-  // close it if a scroll still sneaks through (e.g. iOS rubber-banding).
+  // close it the instant any scroll/swipe intent is detected (touchmove and
+  // wheel fire before the page actually moves, so the menu disappears
+  // before it can visually desync from a position: fixed glitch).
   useEffect(() => {
     if (!open) return
-    const prevOverflow = document.body.style.overflow
-    document.body.style.overflow = 'hidden'
-    const onScroll = () => setOpen(false)
-    window.addEventListener('scroll', onScroll, { passive: true })
+    const html = document.documentElement
+    const body = document.body
+    const prevHtmlOverflow = html.style.overflow
+    const prevBodyOverflow = body.style.overflow
+    html.style.overflow = 'hidden'
+    body.style.overflow = 'hidden'
+    const onIntent = () => setOpen(false)
+    window.addEventListener('touchmove', onIntent, { passive: true })
+    window.addEventListener('wheel', onIntent, { passive: true })
+    window.addEventListener('scroll', onIntent, { passive: true })
     return () => {
-      document.body.style.overflow = prevOverflow
-      window.removeEventListener('scroll', onScroll)
+      html.style.overflow = prevHtmlOverflow
+      body.style.overflow = prevBodyOverflow
+      window.removeEventListener('touchmove', onIntent)
+      window.removeEventListener('wheel', onIntent)
+      window.removeEventListener('scroll', onIntent)
     }
   }, [open])
 
