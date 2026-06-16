@@ -17,6 +17,20 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', check)
   }, [])
 
+  // Lock background scroll while the full-screen mobile menu is open, and
+  // close it if a scroll still sneaks through (e.g. iOS rubber-banding).
+  useEffect(() => {
+    if (!open) return
+    const prevOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    const onScroll = () => setOpen(false)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => {
+      document.body.style.overflow = prevOverflow
+      window.removeEventListener('scroll', onScroll)
+    }
+  }, [open])
+
   const close = () => setOpen(false)
 
   return (
