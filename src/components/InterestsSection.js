@@ -43,6 +43,16 @@ export default function InterestsSection() {
             </motion.div>
           ))}
         </div>
+
+        <motion.p
+          className={styles.closing}
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+          viewport={{ once: true }}
+        >
+          In short: I stay fit so I can travel, I travel so I can read and learn, and I read and learn so I can work better.
+        </motion.p>
       </div>
     </section>
   )
