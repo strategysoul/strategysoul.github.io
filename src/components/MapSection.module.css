@@ -1,0 +1,427 @@
+.section {
+  background: var(--bg-warm);
+  padding: 7rem 8vw;
+}
+
+.inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.label {
+  display: block;
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.num {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.1rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--ink);
+}
+
+.title em { font-style: italic; color: var(--accent); }
+
+.ghostNum {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-display);
+  font-size: clamp(6rem, 12vw, 10rem);
+  font-weight: 700;
+  line-height: 1;
+  -webkit-text-stroke: 1.5px var(--border);
+  color: transparent;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ---- game layout ---- */
+.game {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.mapPane {
+  position: relative;
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-warm) 100%);
+  border: 1px solid var(--border);
+  padding: 1.25rem;
+  outline: none;
+  display: flex;
+  align-items: center;
+}
+
+.mapWrap { position: relative; width: 100%; aspect-ratio: 1010 / 666; }
+
+.base { width: 100%; height: 100%; line-height: 0; }
+
+.worldSvg { width: 100%; height: 100%; display: block; }
+
+.worldSvg .hi { cursor: pointer; }
+
+/* every landmass: muted theme tan so the highlighted countries pop */
+.worldSvg path {
+  fill: var(--border);
+  stroke: var(--bg);
+  stroke-width: 0.4;
+  transition: fill 0.3s;
+}
+
+.worldSvg .hi { fill: var(--accent); }
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.route {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-dasharray: 1.5 7;
+  opacity: 0.85;
+}
+
+/* on-map annotations shown when zoomed into a country */
+.annoCity {
+  font-family: var(--font-display);
+  font-weight: 600;
+  fill: var(--ink);
+  paint-order: stroke;
+  stroke: var(--bg);
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+
+.annoLine {
+  font-family: var(--font-body, inherit);
+  font-weight: 500;
+  fill: var(--accent);
+  paint-order: stroke;
+  stroke: var(--bg);
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+
+.backBtn {
+  position: absolute;
+  top: 0.85rem;
+  left: 0.85rem;
+  background: var(--bg-dark);
+  color: var(--bg);
+  border: none;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  padding: 0.45rem 0.9rem;
+  border-left: 3px solid var(--accent);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.backBtn:hover { background: var(--accent); }
+
+.pin { pointer-events: auto; cursor: pointer; outline: none; }
+
+.pinDot {
+  fill: var(--accent);
+  opacity: 0.5;
+  transition: opacity 0.2s;
+}
+
+.pin:hover .pinDot { opacity: 0.85; }
+.pinActive .pinDot { opacity: 0; }
+
+.pinLabel {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 600;
+  fill: var(--ink);
+  opacity: 0;
+  transition: opacity 0.2s;
+  paint-order: stroke;
+  stroke: var(--bg);
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+
+.pin:hover .pinLabel,
+.pin:focus-visible .pinLabel,
+.pinActive .pinLabel { opacity: 1; }
+.pinActive .pinLabel { fill: var(--accent); }
+
+.pulse {
+  fill: var(--accent);
+  opacity: 0.3;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: pulse 1.8s ease-out infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.4; transform: scale(0.5); }
+  100% { opacity: 0; transform: scale(1.5); }
+}
+
+.traveller {
+  fill: var(--accent);
+  stroke: var(--bg);
+  stroke-width: 2.5;
+}
+
+/* ---- side panel ---- */
+.panel {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--accent);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.panelTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.panelStep {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.panelPlace {
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.2rem 0.7rem;
+  white-space: nowrap;
+}
+
+.panelRole {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.15;
+  margin-bottom: 0.35rem;
+}
+
+.panelOrg {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--ink-muted);
+  margin-bottom: 1rem;
+}
+
+.panelDesc {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--ink-muted);
+  flex: 1;
+}
+
+.hint {
+  margin-top: 1rem;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--accent);
+}
+
+/* ---- stepper controls ---- */
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.navBtn {
+  width: 38px;
+  height: 38px;
+  flex: none;
+  border: 1px solid var(--border);
+  background: none;
+  color: var(--ink);
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+
+.navBtn:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+.navBtn:disabled { opacity: 0.3; cursor: default; }
+
+.dots {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0 auto;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--border);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.dot:hover { background: var(--ink-muted); }
+.dotOn { background: var(--accent); transform: scale(1.3); }
+
+.readToggle {
+  margin-top: 1.25rem;
+  align-self: flex-start;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-muted);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.readToggle:hover { color: var(--accent); border-color: var(--accent); }
+
+/* ---- stats strip ---- */
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: clamp(1.5rem, 6vw, 4.5rem);
+  border-top: 1px solid var(--border);
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+}
+
+.stat { display: flex; align-items: baseline; gap: 0.5rem; }
+
+.statNum {
+  font-family: var(--font-display);
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+/* ---- readable timeline ---- */
+.list { display: flex; flex-direction: column; gap: 1.5rem; }
+
+.listItem {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.25rem;
+  align-items: start;
+  border-left: 2px solid var(--border);
+  padding-left: 1.5rem;
+}
+
+.listGlyph {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--accent);
+  line-height: 1.4;
+}
+
+.period {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.3rem;
+}
+
+.role {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.2;
+}
+
+.org {
+  font-size: 0.88rem;
+  font-style: italic;
+  color: var(--ink-muted);
+  margin-bottom: 0.5rem;
+}
+
+.desc {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--ink-muted);
+  max-width: 60ch;
+}
+
+.closer {
+  margin-top: 2.5rem;
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+@media (max-width: 860px) {
+  .game { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 900px) {
+  .closer { white-space: normal; font-size: 1.1rem; }
+}
+
+@media (max-width: 600px) {
+  .section { padding: 5rem 1.5rem; }
+  .stats { gap: 1.25rem; }
+  .statNum { font-size: 1.6rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulse { animation: none; opacity: 0; }
+}

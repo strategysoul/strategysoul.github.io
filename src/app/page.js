@@ -2,7 +2,7 @@ import HeroSection from '@/components/HeroSection'
 import Marquee from '@/components/Marquee'
 import ChaosMode from '@/components/ChaosMode'
 import AboutSection from '@/components/AboutSection'
-import JourneySection from '@/components/JourneySection'
+import MapSection from '@/components/MapSection'
 import WorkSection from '@/components/WorkSection'
 import InterestsSection from '@/components/InterestsSection'
 
@@ -18,7 +18,7 @@ export default function Home() {
       <HeroSection />
       <Marquee />
       <AboutSection />
-      <JourneySection />
+      <MapSection />
       <WorkSection />
       <InterestsSection />
     </main>
