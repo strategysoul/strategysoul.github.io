@@ -225,7 +225,6 @@ export default function MapSection() {
           viewport={{ once: true }}
         >
           <span className={styles.label}><span className={styles.num}>№ 02</span> · The Journey</span>
-          <h2 className={styles.title}>From Bhubaneswar to Dubai,<br />the <em>long way round.</em></h2>
           <span className={styles.ghostNum} aria-hidden="true">02</span>
         </motion.div>
 
