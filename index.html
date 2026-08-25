@@ -12,6 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;800&display=swap">
+<script>document.documentElement.className="js";</script>
 <link rel="stylesheet" href="/assets/css/site.css">
 </head>
 <body>
@@ -19,11 +20,20 @@
 <div class="cursor-dot" id="curDot" aria-hidden="true"></div>
 <div class="cursor-bubble" id="curBubble" aria-hidden="true">View</div>
 <div class="work-preview" id="workPreview" aria-hidden="true"></div>
-<div class="topbar topbar--diff">
-  <a class="topbar__brand" href="/"><span class="label">StrategySoul</span></a>
-  <div class="topbar__links"><a href="/#work"><span class="label">Work</span></a><a href="/about/"><span class="label">About</span></a><a href="/strategy-breakdowns/"><span class="label">Breakdowns</span></a><a href="/contact/"><span class="label">Contact</span></a>
+
+<div class="preloader" id="preloader">
+  <div class="preloader__name"><span>Sweta Kumari</span></div>
+  <div class="preloader__count" id="preCount">0</div>
+  <div class="preloader__bar" id="preBar"></div>
+</div>
+<div class="navbar">
+  <a class="credits" href="/">
+    <span class="credits__sym" aria-hidden="true">&#10059;</span>
+    <span class="credits__swap"><span>Code by</span><span>Sweta Kumari</span></span>
+  </a>
+  <div class="navlinks"><a href="/#work">Work</a><a href="/about/">About</a><a href="/strategy-breakdowns/">Breakdowns</a><a href="/contact/">Contact</a>
     <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
-      <span class="label">Menu</span><span class="menu-btn__lines" aria-hidden="true"><i></i><i></i></span>
+      Menu<span class="lines" aria-hidden="true"><i></i><i></i></span>
     </button>
   </div>
 </div>
@@ -45,120 +55,108 @@
 </nav>
 
 <header class="hero" id="top">
-  <div class="hero__photo" aria-hidden="true"><img src="/assets/img/Sweta.jpg" alt=""></div>
+  <div class="hero__media" aria-hidden="true"><img src="/assets/img/Sweta.jpg" alt=""></div>
   <div class="hero__scrim" aria-hidden="true"></div>
-  <div class="hero__inner">
-    <div class="hero__meta">
-      <p class="hero__role">Product Manager building <em>0-to-1 voice AI</em>. Engineer turned strategist, shipping things that make sense to humans.</p>
-      <span class="label hero__avail"><span class="dot-live"></span>Open to product roles & select advisory work</span>
-    </div>
-    <h1 class="display hero__name">
-      <span class="ln"><span>Sweta</span></span>
-      <span class="ln"><span>Kumari</span></span>
-    </h1>
-    <div class="hero__rule"></div>
-    <div class="hero__bottom">
-      <ul class="cred"><li>ex-Dell</li><li>MBA, HEC Paris</li><li>PM @ Humai</li></ul>
-      <span class="scroll-cue"><i aria-hidden="true"></i><span class="label">Scroll</span></span>
+
+  <div class="hanger">
+    <div class="hanger__panel"><span>Open to<br>product roles<br>&amp; advisory</span></div>
+    <div class="badge" aria-hidden="true">
+      <svg class="badge__ring" viewBox="0 0 73 73">
+        <defs><path id="ring" d="M36.5,36.5 m-27,0 a27,27 0 1,1 54,0 a27,27 0 1,1 -54,0"/></defs>
+        <text><textPath href="#ring">Available &#183; Available &#183; Available &#183; </textPath></text>
+      </svg>
+      <span class="badge__dot">&#9670;</span>
     </div>
   </div>
+
+  <div class="hero__role">
+    <span class="arrow" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M6 18 L18 6 M9 6 h9 v9"/></svg>
+    </span>
+    <p>Product<br>Manager</p>
+  </div>
+
+  <div class="bigname" aria-hidden="true">
+    <div class="bigname__track"><span>Sweta Kumari&nbsp;&mdash;&nbsp;</span><span>Sweta Kumari&nbsp;&mdash;&nbsp;</span><span>Sweta Kumari&nbsp;&mdash;&nbsp;</span></div>
+    <div class="bigname__track"><span>Sweta Kumari&nbsp;&mdash;&nbsp;</span><span>Sweta Kumari&nbsp;&mdash;&nbsp;</span><span>Sweta Kumari&nbsp;&mdash;&nbsp;</span></div>
+  </div>
+  <h1 class="visually-hidden">Sweta Kumari &mdash; Product Manager</h1>
 </header>
 
-<div class="strip" aria-hidden="true"><div class="strip__track"><span>Product Strategy</span><span>Behavioral Design</span><span>Voice AI</span><span>Go-to-Market</span><span>Storytelling</span><span>Systems Thinking</span></div><div class="strip__track"><span>Product Strategy</span><span>Behavioral Design</span><span>Voice AI</span><span>Go-to-Market</span><span>Storytelling</span><span>Systems Thinking</span></div></div>
-
-<section class="statement" id="about">
-  <div class="statement__eyebrow"><span class="label">About</span></div>
-  <p class="statement__text">I build products, analyse businesses, and handle ambiguity. Not because someone told me to, but because <em>chaos</em> genuinely excites me.</p>
-  <div class="statement__cols">
-    <div class="statement__body rv"><p>Hi, I'm Sweta. A strategy-driven product professional with ~5 years of experience (which is corporate for <em>&ldquo;she's been doing interesting things for a while.&rdquo;</em>)</p><p>I started as a Software Engineer at Dell, where I went from writing APIs and managing databases to owning a global product. I was good at it. Comfortable, even. Which is exactly why I left. Comfortable is a great place to rest, not to grow.</p><p>So I moved to France to pursue an MBA at HEC Paris (because apparently that's the solution to everything). I specialised in Strategic Marketing, interned as a PM at a B2B SaaS startup, and learned that I could equally enjoy a SWOT analysis and a late espresso in Paris.</p><p>Now I can speak most tech, finance, and marketing jargon, but more importantly, I understand people. And if you've ever tried to sell readymade broth to French chefs, you'll know that's the harder skill.</p><p>Currently at Humai, building a voice AI tool for sales reps. Early-stage startup, so PM is shorthand for product discovery, GTM, and deciding what &ldquo;done&rdquo; looks like before anyone's quite agreed on what we're building. Chaotic, fast, and exactly the kind of problem I like.</p></div>
-    <div class="statement__aside rv">
-      <ul class="facts">
-        <li><span>Now</span><span>PM @ Humai</span></li>
-        <li><span>Before</span><span>Dell Technologies</span></li>
-        <li><span>Studied</span><span>MBA, HEC Paris</span></li>
-        <li><span>Focus</span><span>0&#8594;1 voice AI</span></li>
-      </ul>
-      <a class="btn-line" href="/about/">Read the longer version &#8594;</a>
+<section class="intro" id="about">
+  <div class="intro__row">
+    <p class="intro__lines" id="introLines"><span class="ln"><span>Turning ambiguous problems</span></span><span class="ln"><span>into products people keep</span></span><span class="ln"><span>using. Engineer turned</span></span><span class="ln"><span>strategist, shipping things</span></span><span class="ln"><span>that make sense to humans.</span></span></p>
+    <div class="intro__aside">
+      <p>The combination of an engineering background, an MBA and time spent
+         actually talking to users puts me in a useful place: close enough to the
+         build to be realistic, far enough out to ask why.</p>
+      <a class="roundbtn" href="/about/" data-magnetic><span>About me</span></a>
     </div>
   </div>
 </section>
 
 <section class="work" id="work">
-  <div class="work__head"><span class="label">Selected work</span><span class="label">06 projects</span></div>
-  <ul class="work__list"><li class="work__item rv">
+  <div class="work__label">Recent work</div>
+  <ul class="work__list"><li class="work__item">
   <a class="work__link" href="/transcription-benchmark/" data-preview="/assets/img/accents.jpg">
-    <span class="work__num">01</span>
     <h3 class="work__title">I tested 12 transcription models so you don&#x27;t have to</h3>
     <span class="work__disc">AI Research · Huscribe</span>
-    <span class="work__year">8 min read</span>
   </a></li>
-<li class="work__item rv">
+<li class="work__item">
   <a class="work__link" href="/transcription-latency/" data-preview="/assets/img/accents.jpg">
-    <span class="work__num">02</span>
     <h3 class="work__title">I timed 12 transcription models so you don&#x27;t have to</h3>
     <span class="work__disc">AI Research · Huscribe</span>
-    <span class="work__year">6 min read</span>
   </a></li>
-<li class="work__item rv">
+<li class="work__item">
   <a class="work__link" href="/plastic/" data-preview="/assets/img/2.jpg">
-    <span class="work__num">03</span>
     <h3 class="work__title">Reducing plastics using behavioral nudges</h3>
     <span class="work__disc">Behavioral Strategy · HEC Paris</span>
-    <span class="work__year">5 min read</span>
   </a></li>
-<li class="work__item rv">
+<li class="work__item">
   <a class="work__link" href="/salsus/" data-preview="/assets/img/salsus.png">
-    <span class="work__num">04</span>
     <h3 class="work__title">Branding strategy for Salsus</h3>
     <span class="work__disc">GTM Strategy · HEC Paris</span>
-    <span class="work__year">7 min read</span>
   </a></li>
-<li class="work__item rv">
+<li class="work__item">
   <a class="work__link" href="/tdmt/" data-preview="/assets/img/award.png">
-    <span class="work__num">05</span>
     <h3 class="work__title">Test Data Management Tool at Dell</h3>
     <span class="work__disc">Product · Dell Technologies</span>
-    <span class="work__year">Coming soon</span>
   </a></li>
-<li class="work__item rv">
+<li class="work__item">
   <a class="work__link" href="/arnavi/" data-preview="/assets/img/s1.png">
-    <span class="work__num">06</span>
     <h3 class="work__title">AR Office Navigator</h3>
     <span class="work__disc">Innovation · Dell Technologies</span>
-    <span class="work__year">Coming soon</span>
   </a></li>
 </ul>
-  <div class="cta-wrap"><a class="cta-circle" href="/strategy-breakdowns/">Strategy<br>breakdowns</a></div>
+  <div class="work__more">
+    <a class="roundbtn roundbtn--light more" href="/strategy-breakdowns/" data-magnetic>
+      <span>More work</span><sup>9</sup>
+    </a>
+  </div>
 </section>
 
-<section class="interests" id="interests">
-  <div class="interests__head">
-    <span class="label">Beyond work</span>
-    <h2 class="display interests__title">Things that keep me sane<br>(and occasionally tired).</h2>
-  </div>
-  <div class="interests__grid"><div class="interest rv"><span class="interest__label">Poetry</span><p>Writing precisely is a skill. Useful in PRDs, even more useful in pitch decks.</p></div><div class="interest rv"><span class="interest__label">Reading</span><p>Fuels most of my strategic thinking. Also responsible for the commute money I don&#x27;t have.</p></div><div class="interest rv"><span class="interest__label">Martial Arts</span><p>Systems thinking in real time. Also useful when roadmaps get derailed.</p></div><div class="interest rv"><span class="interest__label">Travelling</span><p>The fastest way to understand that your assumptions about people are wrong.</p></div><div class="interest rv"><span class="interest__label">Cycling</span><p>Long rides. Good for problems that don&#x27;t have obvious answers yet.</p></div><div class="interest rv"><span class="interest__label">Fitness</span><p>Discipline that shows up everywhere else, whether you want it to or not.</p></div></div>
-  <p class="interests__closing rv">In short: I stay fit so I can travel, I travel so I can read and learn, and I read and learn so I can work better.</p>
+<section class="hstrip" aria-label="Work imagery">
+  <div class="hstrip__track"><figure><img src="/assets/img/accents.jpg" alt="" loading="lazy"><figcaption>AI Research · Huscribe</figcaption></figure><figure><img src="/assets/img/accents.jpg" alt="" loading="lazy"><figcaption>AI Research · Huscribe</figcaption></figure><figure><img src="/assets/img/2.jpg" alt="" loading="lazy"><figcaption>Behavioral Strategy · HEC Paris</figcaption></figure><figure><img src="/assets/img/salsus.png" alt="" loading="lazy"><figcaption>GTM Strategy · HEC Paris</figcaption></figure><figure><img src="/assets/img/award.png" alt="" loading="lazy"><figcaption>Product · Dell Technologies</figcaption></figure><figure><img src="/assets/img/s1.png" alt="" loading="lazy"><figcaption>Innovation · Dell Technologies</figcaption></figure><figure><img src="/assets/img/accents.jpg" alt="" loading="lazy"><figcaption>AI Research · Huscribe</figcaption></figure><figure><img src="/assets/img/accents.jpg" alt="" loading="lazy"><figcaption>AI Research · Huscribe</figcaption></figure><figure><img src="/assets/img/2.jpg" alt="" loading="lazy"><figcaption>Behavioral Strategy · HEC Paris</figcaption></figure><figure><img src="/assets/img/salsus.png" alt="" loading="lazy"><figcaption>GTM Strategy · HEC Paris</figcaption></figure><figure><img src="/assets/img/award.png" alt="" loading="lazy"><figcaption>Product · Dell Technologies</figcaption></figure><figure><img src="/assets/img/s1.png" alt="" loading="lazy"><figcaption>Innovation · Dell Technologies</figcaption></figure></div>
 </section>
-<footer class="footer theme-dark" id="contact-footer">
-  <div class="footer__inner">
-    <h2 class="display footer__big">Let's build something<br>worth talking about.</h2>
-    <div class="footer__rule"></div>
-    <div class="footer__grid">
-      <div class="footer__contact">
-        <span class="label">Get in touch</span>
-        <a href="mailto:swetakumaripm@gmail.com">swetakumaripm@gmail.com</a>
-      </div>
-      <div class="footer__col"><span class="label">Elsewhere</span>
-        <a href="https://www.linkedin.com/in/swetakumaripm" target="_blank" rel="noreferrer">LinkedIn &#8599;</a>
-        <a href="/strategy-breakdowns/">Strategy Breakdowns</a>
-        <a href="/about/">About</a>
-      </div>
-      <div class="footer__col"><span class="label">Local time</span><span class="clock" id="clock">--:--</span></div>
-    </div>
-    <div class="footer__base">
-      <span class="label">&copy; <span id="yr"></span> Sweta Kumari &middot; StrategySoul</span>
-      <span class="label">Built as a static site</span>
-    </div>
+<footer class="sitefooter theme-dark">
+  <div class="sitefooter__top">
+    <h2 class="sitefooter__big">Let's build<br>something worth<br>talking about.</h2>
+    <a class="roundbtn sitefooter__cta" href="mailto:swetakumaripm@gmail.com" data-magnetic><span>Get in<br>touch</span></a>
+  </div>
+  <div class="sitefooter__rule"></div>
+  <div class="sitefooter__contact">
+    <a href="mailto:swetakumaripm@gmail.com">swetakumaripm@gmail.com</a>
+    <a href="https://www.linkedin.com/in/swetakumaripm" target="_blank" rel="noreferrer">LinkedIn &#8599;</a>
+  </div>
+  <div class="sitefooter__base">
+    <div class="col"><span class="k">Version</span><span><span id="yr"></span> &copy; Edition</span></div>
+    <div class="col"><span class="k">Local time</span><span class="clock" id="clock">--:--</span></div>
+    <div class="col"><span class="k">Socials</span>
+      <span class="sitefooter__socials">
+        <a href="https://www.linkedin.com/in/swetakumaripm" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href="mailto:swetakumaripm@gmail.com">Email</a>
+        <a href="/strategy-breakdowns/">Breakdowns</a>
+      </span></div>
   </div>
 </footer>
 <script src="/assets/js/site.js"></script>

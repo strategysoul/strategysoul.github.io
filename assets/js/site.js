@@ -68,45 +68,67 @@
 
   /* ---------- scroll reveals ---------- */
   (function () {
+    var els = $$(".rv");
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
         if (en.isIntersecting) { en.target.classList.add("on"); io.unobserve(en.target); }
       });
     }, { threshold: 0.15, rootMargin: "0px 0px -8% 0px" });
-    $$(".rv").forEach(function (el) { io.observe(el); });
+    els.forEach(function (el) { io.observe(el); });
+    // Same safety net as the intro lines.
+    setTimeout(function () { els.forEach(function (el) { el.classList.add("on"); }); }, 2500);
   })();
 
-  /* ---------- statement word reveal ---------- */
+  /* ---------- preloader ---------- */
   (function () {
-    var st = $(".statement__text");
-    if (!st) return;
-    // split top-level text nodes into words, leaving inline markup intact
-    (function split(node) {
-      Array.prototype.slice.call(node.childNodes).forEach(function (n) {
-        if (n.nodeType === 3) {
-          var frag = document.createDocumentFragment();
-          n.textContent.split(/(\s+)/).forEach(function (t) {
-            if (!t.trim()) { frag.appendChild(document.createTextNode(t)); return; }
-            var s = document.createElement("span");
-            s.className = "w"; s.textContent = t;
-            frag.appendChild(s);
-          });
-          node.replaceChild(frag, n);
-        } else if (n.nodeType === 1) { split(n); }
-      });
-    })(st);
-
-    var words = $$(".w", st);
-    if (reduced) { words.forEach(function (w) { w.classList.add("on"); }); return; }
-    function onScroll() {
-      var box = st.getBoundingClientRect();
-      var start = innerHeight * 0.86, end = innerHeight * 0.3;
-      var p = (start - box.top) / (start - end);
-      var upto = Math.round(Math.max(0, Math.min(1, p)) * words.length);
-      words.forEach(function (w, i) { w.classList.toggle("on", i < upto); });
+    var pre = $("#preloader");
+    if (!pre) return;
+    var bar = $("#preBar"), count = $("#preCount"), n = 0;
+    function finish() {
+      pre.classList.add("is-done");
+      setTimeout(function () { pre.remove(); }, 1200);
     }
-    addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
+    if (reduced) { count.textContent = "100"; finish(); return; }
+    var t = setInterval(function () {
+      n += Math.random() * 9 + 3;
+      if (n >= 100) { n = 100; clearInterval(t); setTimeout(finish, 360); }
+      count.textContent = Math.floor(n);
+      bar.style.width = n + "%";
+    }, 90);
+  })();
+
+  /* ---------- intro line reveal (.span-lines equivalent) ---------- */
+  (function () {
+    var el = $("#introLines");
+    if (!el) return;
+    if (reduced) { el.classList.add("on"); return; }
+    var io = new IntersectionObserver(function (e) {
+      if (e[0].isIntersecting) { reveal(); }
+    }, { threshold: 0.3 });
+    function reveal() { el.classList.add("on"); io.disconnect(); clearTimeout(fallback); }
+    // Safety net: if IntersectionObserver never fires (background tab, throttled
+    // compositor, observer unsupported) the copy must still become visible.
+    var fallback = setTimeout(reveal, 2000);
+    io.observe(el);
+  })();
+
+  /* ---------- magnetic buttons ---------- */
+  (function () {
+    if (reduced || window.matchMedia("(pointer: coarse)").matches) return;
+    $$("[data-magnetic]").forEach(function (el) {
+      var rect = null;
+      function enter() { rect = el.getBoundingClientRect(); }
+      function move(e) {
+        if (!rect) rect = el.getBoundingClientRect();
+        var dx = e.clientX - (rect.left + rect.width / 2);
+        var dy = e.clientY - (rect.top + rect.height / 2);
+        el.style.transform = "translate(" + dx * 0.28 + "px," + dy * 0.28 + "px)";
+      }
+      function leave() { el.style.transform = "translate(0,0)"; rect = null; }
+      el.addEventListener("mouseenter", enter);
+      el.addEventListener("mousemove", move);
+      el.addEventListener("mouseleave", leave);
+    });
   })();
 
   /* ---------- reading progress ---------- */

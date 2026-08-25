@@ -12,6 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;800&display=swap">
+<script>document.documentElement.className="js";</script>
 <link rel="stylesheet" href="/assets/css/site.css">
 </head>
 <body>
@@ -19,11 +20,14 @@
 <div class="cursor-dot" id="curDot" aria-hidden="true"></div>
 <div class="cursor-bubble" id="curBubble" aria-hidden="true">View</div>
 <div class="work-preview" id="workPreview" aria-hidden="true"></div>
-<div class="topbar topbar--diff">
-  <a class="topbar__brand" href="/"><span class="label">StrategySoul</span></a>
-  <div class="topbar__links"><a href="/#work"><span class="label">Work</span></a><a href="/about/"><span class="label">About</span></a><a href="/strategy-breakdowns/"><span class="label">Breakdowns</span></a><a href="/contact/"><span class="label">Contact</span></a>
+<div class="navbar">
+  <a class="credits" href="/">
+    <span class="credits__sym" aria-hidden="true">&#10059;</span>
+    <span class="credits__swap"><span>Code by</span><span>Sweta Kumari</span></span>
+  </a>
+  <div class="navlinks"><a href="/#work">Work</a><a href="/about/">About</a><a href="/strategy-breakdowns/">Breakdowns</a><a href="/contact/">Contact</a>
     <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
-      <span class="label">Menu</span><span class="menu-btn__lines" aria-hidden="true"><i></i><i></i></span>
+      Menu<span class="lines" aria-hidden="true"><i></i><i></i></span>
     </button>
   </div>
 </div>
@@ -68,26 +72,25 @@
     <li><a href="https://www.linkedin.com/in/swetakumaripm" target="_blank" rel="noreferrer">linkedin.com/in/swetakumaripm &#8599;</a></li>
   </ul>
 </section>
-<footer class="footer theme-dark" id="contact-footer">
-  <div class="footer__inner">
-    <h2 class="display footer__big">Let's build something<br>worth talking about.</h2>
-    <div class="footer__rule"></div>
-    <div class="footer__grid">
-      <div class="footer__contact">
-        <span class="label">Get in touch</span>
-        <a href="mailto:swetakumaripm@gmail.com">swetakumaripm@gmail.com</a>
-      </div>
-      <div class="footer__col"><span class="label">Elsewhere</span>
-        <a href="https://www.linkedin.com/in/swetakumaripm" target="_blank" rel="noreferrer">LinkedIn &#8599;</a>
-        <a href="/strategy-breakdowns/">Strategy Breakdowns</a>
-        <a href="/about/">About</a>
-      </div>
-      <div class="footer__col"><span class="label">Local time</span><span class="clock" id="clock">--:--</span></div>
-    </div>
-    <div class="footer__base">
-      <span class="label">&copy; <span id="yr"></span> Sweta Kumari &middot; StrategySoul</span>
-      <span class="label">Built as a static site</span>
-    </div>
+<footer class="sitefooter theme-dark">
+  <div class="sitefooter__top">
+    <h2 class="sitefooter__big">Let's build<br>something worth<br>talking about.</h2>
+    <a class="roundbtn sitefooter__cta" href="mailto:swetakumaripm@gmail.com" data-magnetic><span>Get in<br>touch</span></a>
+  </div>
+  <div class="sitefooter__rule"></div>
+  <div class="sitefooter__contact">
+    <a href="mailto:swetakumaripm@gmail.com">swetakumaripm@gmail.com</a>
+    <a href="https://www.linkedin.com/in/swetakumaripm" target="_blank" rel="noreferrer">LinkedIn &#8599;</a>
+  </div>
+  <div class="sitefooter__base">
+    <div class="col"><span class="k">Version</span><span><span id="yr"></span> &copy; Edition</span></div>
+    <div class="col"><span class="k">Local time</span><span class="clock" id="clock">--:--</span></div>
+    <div class="col"><span class="k">Socials</span>
+      <span class="sitefooter__socials">
+        <a href="https://www.linkedin.com/in/swetakumaripm" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href="mailto:swetakumaripm@gmail.com">Email</a>
+        <a href="/strategy-breakdowns/">Breakdowns</a>
+      </span></div>
   </div>
 </footer>
 <script src="/assets/js/site.js"></script>
