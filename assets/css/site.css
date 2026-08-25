@@ -33,6 +33,7 @@
 
   --inset:clamp(20px,7.99vw,115px);   /* container side margin      */
   --offset:clamp(0px,7.99vw,115px);   /* inner column offset        */
+  --hero-bg:#999D9E;   /* the reference's exact header grey */
   --wt:500;                            /* stands in for Dennis Sans 450 */
 }
 *,*::before,*::after{box-sizing:border-box}
@@ -123,30 +124,37 @@ img{max-width:100%;display:block}
 
 /* ==========================================================================
    HERO — .home-header equivalent
-   ========================================================================== */
-.hero{position:relative;min-height:115svh;background:var(--ink);overflow:hidden;color:#fff}
-/* No parallax is applied, so the media fills the hero exactly; an overscan
-   here would only crop the top of the subject's head. */
-.hero__media{position:absolute;inset:0;z-index:0}
-.hero__media img{width:100%;height:100%;object-fit:cover;object-position:50% 3%;
-  filter:grayscale(1) contrast(1.04) brightness(.66)}
-.hero__scrim{position:absolute;inset:0;z-index:1;background:
-  linear-gradient(180deg,rgba(20,21,23,.62) 0%,rgba(20,21,23,.18) 34%,rgba(20,21,23,.82) 86%,var(--ink) 100%)}
 
-/* left "hanger" tab + rotating badge */
+   The reference is NOT a dark hero. Measured on the live site:
+     .home-header background  rgb(153,157,158)   (light grey)
+     .personal-image img      1087px wide, CENTRED (75.5% of 1440), filter: none
+   It reads as seamless because the portrait was shot on a grey backdrop that
+   matches the section background. Sweta's photo has a warm interior blur
+   averaging rgb(160,152,140) — near-identical luminance (152 vs 156) — so the
+   same trick works with a warm grey instead of a cool one.
+   ========================================================================== */
+.hero{position:relative;min-height:115svh;background:var(--hero-bg);overflow:hidden;color:#fff}
+.hero__media{position:absolute;inset:0;z-index:0;display:flex;justify-content:center}
+.hero__media{align-items:flex-end}
+.hero__media img{width:auto;height:94%;object-fit:contain;filter:none}
+@media(max-width:860px){.hero__media img{height:80%}}
+/* Only a whisper at the foot, to seat the name — the reference has no scrim. */
+.hero__scrim{position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(180deg,rgba(0,0,0,.14) 0%,rgba(0,0,0,0) 26%,rgba(0,0,0,0) 62%,rgba(0,0,0,.18) 100%)}
+
+/* left "hanger": dark pill with a rounded end, and a badge punched out of it */
 .hanger{position:absolute;left:0;top:38.5%;z-index:3;display:flex;align-items:center;height:104px}
-.hanger__panel{background:var(--ink);height:104px;display:flex;align-items:center;padding:0 26px 0 43px;
-  border-radius:0 4px 4px 0}
+.hanger__panel{position:relative;background:var(--ink);height:104px;display:flex;align-items:center;
+  padding:0 100px 0 43px;border-radius:0 52px 52px 0}
 .hanger__panel span{display:block;font-size:var(--fs-body);line-height:1.24;color:#fff;white-space:nowrap}
-.badge{position:relative;width:73px;height:73px;margin-left:-14px;border-radius:50%;background:var(--accent);
-  display:grid;place-items:center;flex:0 0 auto}
+.badge{position:absolute;right:9px;top:50%;transform:translateY(-50%);width:73px;height:73px;border-radius:50%;
+  background:var(--hero-bg);display:grid;place-items:center}
 .badge__ring{position:absolute;inset:0;animation:spin 11s linear infinite}
-.badge__ring text{font-size:9.5px;letter-spacing:.16em;fill:#fff;text-transform:uppercase}
-.badge__dot{width:35px;height:35px;border-radius:50%;border:1px solid rgba(255,255,255,.7);
-  display:grid;place-items:center;font-size:13px}
+.badge__ring text{font-size:9.5px;letter-spacing:.14em;fill:var(--ink);text-transform:uppercase}
+.badge__dot{font-size:20px;line-height:1;color:var(--ink)}
 @media(max-width:860px){.hanger{display:none}}
 
-/* right role block + arrow */
+/* right role block + arrow (arrow points down-right on the reference) */
 .hero__role{position:absolute;z-index:3;right:var(--inset);top:30.6%;text-align:left;width:305px;max-width:40vw}
 .hero__role .arrow{display:block;width:19px;height:19px;margin-bottom:clamp(40px,9vw,109px)}
 .hero__role .arrow svg{width:100%;height:100%;stroke:#fff;fill:none;stroke-width:1.5}
@@ -154,7 +162,7 @@ img{max-width:100%;display:block}
 @media(max-width:860px){.hero__role{top:auto;bottom:34vh;right:auto;left:20px;max-width:70vw}}
 
 /* the 216px running name */
-.bigname{position:absolute;left:0;right:0;bottom:18.3%;z-index:3;overflow:hidden;display:flex}
+.bigname{position:absolute;left:0;right:0;bottom:11%;z-index:3;overflow:hidden;display:flex}
 .bigname__track{display:flex;flex:0 0 auto;animation:marquee 26s linear infinite;will-change:transform}
 .bigname__track span{font-size:var(--fs-name);font-weight:var(--wt);line-height:1;white-space:nowrap;
   color:#fff;padding-right:.22em;display:inline-block}
@@ -315,3 +323,5 @@ img{max-width:100%;display:block}
 
 .visually-hidden{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
   clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+.badge__dot{width:35px;height:35px;fill:none;stroke:var(--ink);stroke-width:1.2}
