@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reducing Plastics with Behavioral Nudges | StrategySoul</title>
+<meta name="description" content="How behavioral nudges can reduce plastic usage: a case study on why bans fail and what actually changes human behavior.">
+<meta property="og:title" content="Reducing Plastics with Behavioral Nudges | StrategySoul">
+<meta property="og:description" content="How behavioral nudges can reduce plastic usage: a case study on why bans fail and what actually changes human behavior.">
+<meta property="og:type" content="website">
+<link rel="icon" href="/favicon-knight.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;800&display=swap">
+<link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+<svg class="grain" aria-hidden="true"><filter id="gf"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(#gf)"/></svg>
+<div class="cursor-dot" id="curDot" aria-hidden="true"></div>
+<div class="cursor-bubble" id="curBubble" aria-hidden="true">View</div>
+<div class="work-preview" id="workPreview" aria-hidden="true"></div>
+<div class="topbar topbar--diff">
+  <a class="topbar__brand" href="/"><span class="label">StrategySoul</span></a>
+  <div class="topbar__links"><a href="/#work"><span class="label">Work</span></a><a href="/about/"><span class="label">About</span></a><a href="/strategy-breakdowns/"><span class="label">Breakdowns</span></a><a href="/contact/"><span class="label">Contact</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+      <span class="label">Menu</span><span class="menu-btn__lines" aria-hidden="true"><i></i><i></i></span>
+    </button>
+  </div>
+</div>
+<nav class="navpanel theme-dark" id="navPanel" aria-hidden="true">
+  <button class="navpanel__close" id="navClose">Close</button>
+  <ul class="navpanel__list">
+    <li><a href="/" data-nav>Home</a></li>
+    <li><a href="/#work" data-nav>Work</a></li><li><a href="/about/" data-nav>About</a></li><li><a href="/strategy-breakdowns/" data-nav>Breakdowns</a></li><li><a href="/contact/" data-nav>Contact</a></li>
+  </ul>
+  <div class="navpanel__meta">
+    <div><div class="label" style="margin-bottom:12px">Socials</div>
+      <div class="navpanel__socials">
+        <a href="https://www.linkedin.com/in/swetakumaripm" target="_blank" rel="noreferrer">LinkedIn &#8599;</a>
+        <a href="mailto:swetakumaripm@gmail.com">Email</a>
+      </div></div>
+    <div><div class="label" style="margin-bottom:8px">Get in touch</div>
+      <a href="mailto:swetakumaripm@gmail.com" style="font-size:17px">swetakumaripm@gmail.com</a></div>
+  </div>
+</nav>
+
+<div class="progress" id="progress"></div>
+<header class="masthead masthead--article">
+  <div class="masthead__inner">
+    <a class="back" href="/#work">← Back to Work</a>
+    <span class="label">Behavioral Strategy · HEC Paris</span>
+    <h1 class="display masthead__title masthead__title--article">Why India&#x27;s Plastic Ban Flopped (and What We Could Do Instead)</h1>
+    <p class="masthead__meta">September 16, 2025 &middot; 5 min read</p>
+  </div>
+</header>
+<article class="prose">
+<p>India has a plastic problem. In 2021, the average Indian used somewhere between <strong>750 and 2143 plastic bags a year</strong>. Compare that to France, where people use just <strong>77 bags per person</strong>. That&apos;s not a gap, that&apos;s a canyon. And if the OECD is right, India&apos;s plastic use could <strong>quadruple by 2050</strong>, reaching around 160 million tons by 2060. Basically, enough plastic to wrap the planet like cling film.</p>
+      <img src="/assets/img/stat_plastic.png" alt="Plastic usage statistics">
+      <p>So, in 2022, the Indian government introduced a nationwide ban on single-use plastic. With penalties of up to €1000 and even possible jail time. Sounds strict enough to scare people straight, right?<br />Well… not really.</p>
+      <h2>Why the Ban Failed</h2>
+      <p>Because humans are talented at ignoring rules when they&apos;re inconvenient. The ban stumbled on three fronts:</p>
+      <ul>
+        <li><strong>No cheap alternatives.</strong> Plastic is dirt cheap; eco-friendly options weren&apos;t.</li>
+        <li><strong>No motivation.</strong> The &quot;why should I care today?&quot; problem.</li>
+        <li><strong>Enforcement? Forget it.</strong> Policing a billion people&apos;s grocery bags is… ambitious.</li>
+      </ul>
+      <p>The result? Plastic smuggling. Yes, actual smuggling of plastic bags. Police officers were inspecting kirana shops like they were raiding a drug cartel, except the contraband was shopping bags that cost a few rupees.</p>
+      <h2>Bans and Human Nature</h2>
+      <p>India isn&apos;t alone. Humans have a long, messy history with bans:</p>
+      <ul>
+        <li><strong>Prohibition (US, 1920s):</strong> Alcohol was banned. People drank more.</li>
+        <li><strong>Delhi&apos;s firecracker ban:</strong> Logic said &quot;less pollution.&quot; Reality said &quot;worst AQI yet.&quot;</li>
+        <li><strong>Kenya&apos;s plastic ban (2016):</strong> Same outcome — smuggling, continued usage.</li>
+      </ul>
+      <p>The pattern is clear: bans make people creative, not compliant.</p>
+      <h2>Why We Break Bans</h2>
+      <p>We dug into behavioral science to explain this rebellion, and found three psychological culprits:</p>
+      <img src="/assets/img/psych.png" alt="Psychological factors driving ban-breaking">
+      <ul>
+        <li><strong>Present Bias:</strong> The bag makes my life easier today. The environmental cost shows up decades later. Guess which one wins.</li>
+        <li><strong>Cognitive Dissonance:</strong> &quot;I know plastic is bad, but my one bag won&apos;t matter. Anyway, the corporations should fix this, not me.&quot;</li>
+        <li><strong>Normative Social Influence:</strong> If everyone else at the shop is taking plastic bags, do you really want to be the lone warrior saying no?</li>
+      </ul>
+      <h2>Our Big Idea: The Green Card</h2>
+      <p>Instead of punishing people, what if we rewarded them? Introducing <strong>Green Card</strong>.</p>
+      <ul>
+        <li>Say no to plastic, scan your Green Card.</li>
+        <li>Earn points.</li>
+        <li>Use points to boost your <strong>credit score</strong>.</li>
+      </ul>
+      <img src="/assets/img/greencard.png" alt="Green Card concept illustration">
+      <p>In a country where loans power almost everything (education, homes, cars), linking eco-friendly choices to creditworthiness could actually change behavior. Suddenly, skipping a plastic bag isn&apos;t about &quot;saving the planet someday,&quot; it&apos;s about &quot;getting your home loan approved today.&quot;</p>
+      <p>And technically, it&apos;s feasible. India&apos;s UPI scan-and-pay system already tracks billions of micro-transactions. Adding a loyalty-style card on top? Not exactly rocket science.</p>
+      <h2>Other Nudges</h2>
+      <ul>
+        <li><strong>Posters at checkout:</strong> &quot;Only 1% of shoppers ask for plastic. Be the 99%.&quot;</li>
+        <li><strong>Opt-in bags:</strong> No more free handouts; you have to ask (and pay).</li>
+        <li><strong>Plastic returns:</strong> Bring bags back, earn discounts or points.</li>
+      </ul>
+      <h2>Did It Happen?</h2>
+      <img src="/assets/img/2.jpg" alt="Pitch to Eric Singler">
+      <p>Not yet. But we pitched it to <strong>Eric Singler (Founder, BVA Nudge Consulting)</strong>, and he loved it:</p>
+      <blockquote>
+        &quot;While everyone is pitching an app to track behavior, it&apos;s impressive to see the old school behavioral solution that makes you a better citizen.&quot;
+      </blockquote>
+      <p>Encouraging words. But the real challenge is convincing banks and the government to link credit scores to bag usage. Bureaucracy moves slower than glaciers, and unfortunately, plastic doesn&apos;t.</p>
+      <h2>Final Thought</h2>
+      <p>India&apos;s plastic consumption is skyrocketing. A ban alone won&apos;t solve it. History and psychology say so. But if avoiding plastic helps you get that home loan or tip your credit score in the right direction? That might just work.</p>
+      <p>Because honestly, nobody wants to live in a country topping the charts for <strong>160 million tons of plastic waste</strong>.</p>
+<div class="bottomline"><span class="label">The bottom line</span><p>Bans don&#x27;t change behavior — they change who gets to break the rules. If you want people to stop doing something, make the alternative more immediately rewarding. Linking plastic avoidance to credit scores turns a distant moral argument into a local financial incentive. That&#x27;s the difference between a policy and a nudge.</p></div>
+<a class="nextread" href="/transcription-benchmark/">
+  <span class="label">Next read &#8212; AI Research · Huscribe</span>
+  <h3>I tested 12 transcription models so you don&#x27;t have to</h3><p>12 models. 5 providers. 50 clips. Whisper won, AssemblyAI surprised everyone.</p></a>
+<a class="back back--end" href="/#work">← Back to Work</a>
+</article>
+<footer class="footer theme-dark" id="contact-footer">
+  <div class="footer__inner">
+    <h2 class="display footer__big">Let's build something<br>worth talking about.</h2>
+    <div class="footer__rule"></div>
+    <div class="footer__grid">
+      <div class="footer__contact">
+        <span class="label">Get in touch</span>
+        <a href="mailto:swetakumaripm@gmail.com">swetakumaripm@gmail.com</a>
+      </div>
+      <div class="footer__col"><span class="label">Elsewhere</span>
+        <a href="https://www.linkedin.com/in/swetakumaripm" target="_blank" rel="noreferrer">LinkedIn &#8599;</a>
+        <a href="/strategy-breakdowns/">Strategy Breakdowns</a>
+        <a href="/about/">About</a>
+      </div>
+      <div class="footer__col"><span class="label">Local time</span><span class="clock" id="clock">--:--</span></div>
+    </div>
+    <div class="footer__base">
+      <span class="label">&copy; <span id="yr"></span> Sweta Kumari &middot; StrategySoul</span>
+      <span class="label">Built as a static site</span>
+    </div>
+  </div>
+</footer>
+<script src="/assets/js/site.js"></script>
+</body>
+</html>
