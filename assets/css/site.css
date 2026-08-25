@@ -125,9 +125,11 @@ img{max-width:100%;display:block}
    HERO — .home-header equivalent
    ========================================================================== */
 .hero{position:relative;min-height:115svh;background:var(--ink);overflow:hidden;color:#fff}
-.hero__media{position:absolute;top:-103px;left:0;right:0;height:calc(100% + 206px);z-index:0}
-.hero__media img{width:100%;height:100%;object-fit:cover;object-position:50% 22%;
-  filter:grayscale(1) contrast(1.04) brightness(.62)}
+/* No parallax is applied, so the media fills the hero exactly; an overscan
+   here would only crop the top of the subject's head. */
+.hero__media{position:absolute;inset:0;z-index:0}
+.hero__media img{width:100%;height:100%;object-fit:cover;object-position:50% 3%;
+  filter:grayscale(1) contrast(1.04) brightness(.66)}
 .hero__scrim{position:absolute;inset:0;z-index:1;background:
   linear-gradient(180deg,rgba(20,21,23,.62) 0%,rgba(20,21,23,.18) 34%,rgba(20,21,23,.82) 86%,var(--ink) 100%)}
 
