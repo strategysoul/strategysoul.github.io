@@ -129,10 +129,15 @@ img{max-width:100%;display:block}
    for it to match, so the hero sits on the ink ground the nav panel and
    footer already use. White on ink also lifts the nav from ~2.8:1 to ~15:1.
    ========================================================================== */
-.hero{position:relative;min-height:100svh;background:var(--ink);overflow:hidden;color:#fff}
+/* Laid out in flow, not by percentage offsets: the role block and the name
+   used to be absolutely positioned and collided on short viewports. */
+.hero{position:relative;min-height:100svh;background:var(--ink);overflow:hidden;color:#fff;
+  display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:clamp(30px,6vh,96px)}
+.hero__row{display:flex;justify-content:space-between;align-items:center;gap:24px;
+  margin-bottom:clamp(20px,5vh,64px)}
 
 /* left "hanger": inverted to read against the ink ground */
-.hanger{position:absolute;left:0;top:38.5%;z-index:3;display:flex;align-items:center;height:104px}
+.hanger{position:relative;z-index:3;display:flex;align-items:center;height:104px;flex:0 0 auto}
 .hanger__panel{position:relative;background:var(--paper);height:104px;display:flex;align-items:center;
   padding:0 100px 0 43px;border-radius:0 52px 52px 0}
 .hanger__panel span{display:block;font-size:var(--fs-body);line-height:1.24;color:var(--ink);white-space:nowrap}
@@ -143,14 +148,18 @@ img{max-width:100%;display:block}
 @media(max-width:860px){.hanger{display:none}}
 
 /* right role block + arrow */
-.hero__role{position:absolute;z-index:3;right:var(--inset);top:30.6%;text-align:left;width:305px;max-width:40vw}
-.hero__role .arrow{display:block;width:19px;height:19px;margin-bottom:clamp(40px,9vw,109px)}
+.hero__role{position:relative;z-index:3;text-align:left;width:305px;max-width:40vw;
+  margin-right:var(--inset);flex:0 0 auto}
+.hero__role .arrow{display:block;width:19px;height:19px;margin-bottom:clamp(18px,9vh,109px)}
 .hero__role .arrow svg{width:100%;height:100%;stroke:#fff;fill:none;stroke-width:1.5}
 .hero__role p{margin:0;font-size:var(--fs-mid);font-weight:var(--wt);line-height:1.4;color:#fff}
-@media(max-width:860px){.hero__role{top:auto;bottom:34vh;right:auto;left:20px;max-width:70vw}}
+@media(max-width:860px){
+  .hero__row{flex-direction:column;align-items:flex-start;gap:22px}
+  .hero__role{margin-right:0;margin-left:20px;max-width:70vw}
+}
 
 /* the 216px running name */
-.bigname{position:absolute;left:0;right:0;bottom:14%;z-index:3;overflow:hidden;display:flex}
+.bigname{position:relative;z-index:3;overflow:hidden;display:flex}
 .bigname__track{display:flex;flex:0 0 auto;animation:marquee 26s linear infinite;will-change:transform}
 .bigname__track span{font-size:var(--fs-name);font-weight:var(--wt);line-height:1;white-space:nowrap;
   color:#fff;padding-right:.22em;display:inline-block}
@@ -247,7 +256,7 @@ img{max-width:100%;display:block}
 .masthead{background:var(--ink);color:#fff;padding:clamp(150px,17vw,240px) var(--inset) clamp(50px,7vw,90px);
   display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end}
 .masthead--article{grid-template-columns:1fr}
-.masthead__inner{width:100%;margin-left:var(--offset)}
+.masthead__inner{width:100%;padding-left:var(--offset)}
 .masthead__title{font-size:clamp(34px,6.1vw,88px);font-weight:var(--wt);line-height:1.04;color:#fff;margin:16px 0 0}
 .masthead__title--article{font-size:clamp(28px,4.4vw,64px);max-width:20ch}
 .masthead__sub{margin:22px 0 0;max-width:52ch;font-size:var(--fs-mid);color:rgba(255,255,255,.72);line-height:1.4}
