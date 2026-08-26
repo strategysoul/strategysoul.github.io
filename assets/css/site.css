@@ -220,9 +220,10 @@ img{max-width:100%;display:block}
 /* ==========================================================================
    HORIZONTAL STRIP — .horizontal-items equivalent
    ========================================================================== */
-.hstrip{overflow:hidden;padding:clamp(40px,6vw,90px) 0;background:var(--paper)}
-.hstrip__track{display:flex;gap:clamp(14px,1.6vw,24px);width:max-content;animation:marquee 46s linear infinite}
-.hstrip__track:hover{animation-play-state:paused}
+.hstrip{overflow:hidden;display:flex;padding:clamp(40px,6vw,90px) 0;background:var(--paper)}
+.hstrip__track{display:flex;gap:clamp(14px,1.6vw,24px);flex:0 0 auto;
+  padding-right:clamp(14px,1.6vw,24px);animation:marquee 46s linear infinite}
+.hstrip:hover .hstrip__track{animation-play-state:paused}
 .hstrip figure{margin:0;flex:0 0 auto;width:clamp(230px,26vw,380px)}
 .hstrip img{width:100%;height:clamp(150px,17vw,250px);object-fit:cover;background:var(--mist)}
 .hstrip figcaption{margin-top:10px;font-size:var(--fs-meta);color:var(--muted)}

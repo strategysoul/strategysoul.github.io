@@ -151,7 +151,7 @@
     function tick() {
       var t = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", hour12: false });
       var z = Intl.DateTimeFormat().resolvedOptions().timeZone.split("/").pop().replace("_", " ");
-      el.textContent = t + " — " + z;
+      el.textContent = t + " · " + z;
     }
     tick(); setInterval(tick, 15000);
   })();
