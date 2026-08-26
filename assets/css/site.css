@@ -159,12 +159,15 @@ img{max-width:100%;display:block}
 }
 
 /* the 216px running name */
-.bigname{position:relative;z-index:3;overflow:hidden;display:flex}
+.bigname{position:relative;z-index:3;overflow:hidden;display:flex;cursor:pointer}
 .bigname__track{display:flex;flex:0 0 auto;animation:marquee 26s linear infinite;will-change:transform}
 .bigname__track span{font-size:var(--fs-name);font-weight:var(--wt);line-height:1;white-space:nowrap;
   color:#fff;padding-right:.22em;display:inline-block}
 @keyframes marquee{to{transform:translateX(-100%)}}
-.hero:hover .bigname__track{animation-play-state:paused}
+/* Marquees never pause on hover: the pointer merely passing over them must
+   not freeze the motion (this used to fire on .hero:hover, i.e. anywhere in
+   the hero). Only an explicit click toggles it, via .is-paused. */
+.bigname.is-paused .bigname__track{animation-play-state:paused}
 
 /* ==========================================================================
    INTRO — .home-intro equivalent
@@ -220,10 +223,10 @@ img{max-width:100%;display:block}
 /* ==========================================================================
    HORIZONTAL STRIP — .horizontal-items equivalent
    ========================================================================== */
-.hstrip{overflow:hidden;display:flex;padding:clamp(40px,6vw,90px) 0;background:var(--paper)}
+.hstrip{overflow:hidden;display:flex;padding:clamp(40px,6vw,90px) 0;background:var(--paper);cursor:pointer}
 .hstrip__track{display:flex;gap:clamp(14px,1.6vw,24px);flex:0 0 auto;
   padding-right:clamp(14px,1.6vw,24px);animation:marquee 46s linear infinite}
-.hstrip:hover .hstrip__track{animation-play-state:paused}
+.hstrip.is-paused .hstrip__track{animation-play-state:paused}
 .hstrip figure{margin:0;flex:0 0 auto;width:clamp(230px,26vw,380px)}
 .hstrip img{width:100%;height:clamp(150px,17vw,250px);object-fit:cover;background:var(--mist)}
 .hstrip figcaption{margin-top:10px;font-size:var(--fs-meta);color:var(--muted)}

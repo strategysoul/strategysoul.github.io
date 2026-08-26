@@ -131,6 +131,15 @@
     });
   })();
 
+  /* ---------- click to pause a marquee (never hover) ---------- */
+  (function () {
+    $$(".bigname, .hstrip").forEach(function (el) {
+      el.addEventListener("click", function () {
+        el.classList.toggle("is-paused");
+      });
+    });
+  })();
+
   /* ---------- reading progress ---------- */
   (function () {
     var bar = $("#progress");
