@@ -33,7 +33,7 @@
 
   --inset:clamp(20px,7.99vw,115px);   /* container side margin      */
   --offset:clamp(0px,7.99vw,115px);   /* inner column offset        */
-  --hero-bg:#999D9E;   /* the reference's exact header grey */
+  --hero-bg:#A4A4A4;   /* == the portrait's own background median, so the photo has no edge */
   --wt:500;                            /* stands in for Dennis Sans 450 */
 }
 *,*::before,*::after{box-sizing:border-box}
@@ -135,9 +135,10 @@ img{max-width:100%;display:block}
    ========================================================================== */
 .hero{position:relative;min-height:115svh;background:var(--hero-bg);overflow:hidden;color:#fff}
 .hero__media{position:absolute;inset:0;z-index:0;display:flex;justify-content:center}
-.hero__media{align-items:flex-end}
-.hero__media img{width:auto;height:94%;object-fit:contain;filter:none}
-@media(max-width:860px){.hero__media img{height:80%}}
+/* A whole photograph, not a cutout: the far background is eased to --hero-bg
+   and the rectangle edge is dissolved, so the hair keeps its real pixels. */
+.hero__media img{width:75.5%;height:100%;object-fit:cover;object-position:50% 50%;filter:none}
+@media(max-width:860px){.hero__media img{width:100%}}
 /* Only a whisper at the foot, to seat the name — the reference has no scrim. */
 .hero__scrim{position:absolute;inset:0;z-index:1;pointer-events:none;
   background:linear-gradient(180deg,rgba(0,0,0,.14) 0%,rgba(0,0,0,0) 26%,rgba(0,0,0,0) 62%,rgba(0,0,0,.18) 100%)}
