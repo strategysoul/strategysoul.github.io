@@ -222,6 +222,49 @@ img{max-width:100%;display:block}
 .more{display:grid;place-items:center;position:relative}
 .more sup{position:absolute;top:-6px;right:-14px;font-size:var(--fs-meta);color:var(--muted)}
 
+
+/* ==========================================================================
+   SERVICES MARQUEE — restored. Same two-track pattern as the name and the
+   image strip: one full set per track, each translating -100% of its own
+   width, so there is never a gap. Never pauses on hover.
+   ========================================================================== */
+.strip{overflow:hidden;display:flex;cursor:pointer;
+  border-bottom:1px solid var(--line);padding:clamp(20px,2.6vw,34px) 0}
+.strip__track{display:flex;flex:0 0 auto;align-items:center;
+  gap:clamp(26px,3vw,52px);padding-right:clamp(26px,3vw,52px);
+  animation:marquee 38s linear infinite}
+.strip.is-paused .strip__track{animation-play-state:paused}
+.strip__track span{display:flex;align-items:center;gap:clamp(26px,3vw,52px);
+  white-space:nowrap;font-size:clamp(20px,2.8vw,40px);font-weight:var(--wt);
+  letter-spacing:.005em}
+.strip__track span::after{content:"";width:7px;height:7px;border-radius:50%;
+  background:var(--accent);flex:0 0 auto}
+
+/* ==========================================================================
+   PULL QUOTE — restored
+   ========================================================================== */
+.quote{margin:clamp(56px,8vw,110px) 0 0;padding:0;margin-left:var(--offset);
+  max-width:22ch;font-size:var(--fs-mid);font-weight:var(--wt);
+  line-height:1.42;color:var(--ink)}
+.quote em{font-style:italic;color:var(--accent)}
+@media(max-width:900px){.quote{margin-left:0;max-width:none}}
+
+/* ==========================================================================
+   INTERESTS — restored
+   ========================================================================== */
+.interests{padding:clamp(70px,10vw,140px) var(--inset);border-top:1px solid var(--line)}
+.interests__head{margin-left:var(--offset)}
+.interests__title{font-size:clamp(26px,4.2vw,60px);margin-top:16px;line-height:1.14}
+.interests__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:1px;background:var(--line);border:1px solid var(--line);
+  margin:clamp(34px,5vw,62px) 0 0}
+.interest{background:var(--paper);padding:clamp(22px,2.6vw,34px)}
+.interest__label{display:block;margin-bottom:10px;font-size:calc(var(--fs-body) + 2px)}
+.interest p{margin:0;font-size:var(--fs-body);line-height:1.72;color:var(--muted)}
+.interests__closing{margin:clamp(34px,5vw,60px) 0 0;margin-left:var(--offset);
+  max-width:48ch;font-size:var(--fs-mid);line-height:1.45}
+@media(max-width:900px){.interests__head,.interests__closing{margin-left:0}}
+
 /* ==========================================================================
    HORIZONTAL STRIP — .horizontal-items equivalent
    ========================================================================== */
