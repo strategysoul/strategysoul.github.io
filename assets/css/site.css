@@ -263,7 +263,12 @@ img{max-width:100%;display:block}
 .interest p{margin:0;font-size:var(--fs-body);line-height:1.72;color:var(--muted)}
 .interests__closing{margin:clamp(34px,5vw,60px) 0 0;margin-left:var(--offset);
   max-width:48ch;font-size:var(--fs-mid);line-height:1.45}
-@media(max-width:900px){.interests__head,.interests__closing{margin-left:0}}
+/* The wink lands as a beat after the closing line: same measure, a step down
+   in size and weight of colour so it reads as an aside, not a second claim. */
+.interests__wink{margin:clamp(12px,1.6vw,20px) 0 0;margin-left:var(--offset);
+  max-width:48ch;font-size:var(--fs-body);line-height:1.5;color:var(--muted)}
+.interests__winkmark{font-size:.9em}
+@media(max-width:900px){.interests__head,.interests__closing,.interests__wink{margin-left:0}}
 
 /* ==========================================================================
    HORIZONTAL STRIP — .horizontal-items equivalent
