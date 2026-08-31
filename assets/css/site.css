@@ -294,7 +294,7 @@ img{max-width:100%;display:block}
   margin-left:calc(43px - var(--inset));margin-right:calc(43px - var(--inset))}
 .sitefooter__base .col{display:grid;gap:5px}
 .sitefooter__base .k{color:var(--muted-light);font-size:11px;letter-spacing:.16em;text-transform:uppercase}
-.sitefooter__socials{display:flex;gap:clamp(14px,2vw,28px)}
+.sitefooter__socials{display:flex;flex-wrap:wrap;gap:clamp(14px,2vw,28px)}
 .sitefooter__socials a{color:rgba(255,255,255,.72);transition:color .3s}
 .sitefooter__socials a:hover{color:#fff}
 .clock{font-variant-numeric:tabular-nums}
