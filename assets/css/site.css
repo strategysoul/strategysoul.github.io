@@ -33,6 +33,18 @@
 
   --inset:clamp(20px,7.99vw,115px);   /* container side margin      */
   --offset:clamp(0px,7.99vw,115px);   /* inner column offset        */
+
+  /* Inner pages run on one shell. The reading column is held to --measure
+     for legibility; everything that is not prose — images, tables, the
+     bottom-line and next-read blocks — fills --shell instead. Before this,
+     every element was locked to the text measure, so a ~610px column sat
+     alone in the middle of a 1920px screen with the infographics shrunk
+     to match it. */
+  --shell:1180px;
+  --shell-pad:clamp(20px,5vw,48px);
+  /* A length, not ch: ch resolves against each element's own font-size, so a
+     ch measure would let the headings run far wider than the paragraphs. */
+  --measure:42rem;
   --wt:400;                            /* Gowun Batang ships 400 and 700 only, not variable */
 }
 *,*::before,*::after{box-sizing:border-box}
@@ -309,10 +321,14 @@ img{max-width:100%;display:block}
    ========================================================================== */
 .masthead{background:var(--ink);color:#fff;padding:clamp(150px,17vw,240px) var(--inset) clamp(50px,7vw,90px);
   display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end}
-.masthead--article{grid-template-columns:1fr}
+.masthead--article{grid-template-columns:1fr;padding-inline:0}
 .masthead__inner{width:100%;padding-left:var(--offset)}
+/* Article mastheads sit on the same shell as the prose below, so the title
+   and the first paragraph share a left edge instead of starting 250px apart. */
+.masthead--article .masthead__inner{max-width:var(--shell);margin-inline:auto;
+  padding-inline:var(--shell-pad)}
 .masthead__title{font-size:clamp(34px,6.1vw,88px);font-weight:var(--wt);line-height:1.12;color:#fff;margin:16px 0 0}
-.masthead__title--article{font-size:clamp(28px,4.4vw,64px);max-width:20ch}
+.masthead__title--article{font-size:clamp(28px,4.4vw,64px);max-width:26ch}
 .masthead__sub{margin:22px 0 0;max-width:50ch;font-size:var(--fs-mid);color:rgba(255,255,255,.72);line-height:1.45}
 .masthead__meta{margin:20px 0 0;font-size:var(--fs-meta);color:rgba(255,255,255,.55)}
 .masthead__photo{width:clamp(110px,13vw,190px);aspect-ratio:1;border-radius:50%;overflow:hidden}
@@ -324,11 +340,17 @@ img{max-width:100%;display:block}
 .back--end:hover{color:var(--ink)}
 .progress{position:fixed;top:0;left:0;height:2px;width:0;background:var(--accent);z-index:900}
 
-.prose{max-width:min(68ch,92vw);margin:0 auto;padding:clamp(50px,7vw,96px) var(--inset) clamp(60px,8vw,110px);
+.prose{max-width:var(--shell);margin:0 auto;
+  padding:clamp(50px,7vw,96px) var(--shell-pad) clamp(60px,8vw,110px);
   font-size:clamp(16px,1.15vw,18px);line-height:1.85}
 .prose p{margin:0 0 1.35em}
 .prose h2{font-size:clamp(22px,2.6vw,34px);font-weight:var(--wt);line-height:1.15;margin:2.2em 0 .7em;text-wrap:balance}
 .prose h3{font-size:clamp(18px,1.9vw,23px);font-weight:var(--wt);margin:1.8em 0 .5em}
+/* Salsus steps down to h4/h5 for its sub-sections. Unstyled they fell back to
+   the UA defaults — h5 at .83em rendered smaller than the body text beneath
+   it, inverting the hierarchy. Both now continue the scale downward. */
+.prose h4{font-size:clamp(17px,1.5vw,20px);font-weight:700;margin:1.7em 0 .45em}
+.prose h5{font-size:1em;font-weight:700;margin:1.6em 0 .4em;color:var(--muted)}
 .prose ul,.prose ol{margin:0 0 1.4em;padding-left:1.3em}
 .prose li{margin-bottom:.6em}
 .prose img{width:100%;height:auto;margin:2em 0;background:var(--mist)}
@@ -342,6 +364,8 @@ img{max-width:100%;display:block}
 .prose th{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
 .prose td{font-variant-numeric:tabular-nums}
 .table-wrap{overflow-x:auto}
+.videoframe{position:relative;margin:1.4em 0;aspect-ratio:16/9;background:var(--mist)}
+.videoframe iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .comingsoon{margin:2.6em 0;padding:26px;border:1px dashed var(--line);text-align:center;color:var(--muted);font-style:italic}
 .bottomline{margin:3em 0 0;padding:28px;background:var(--ink);color:#fff}
 .bottomline .label{color:var(--muted-light);display:block;margin-bottom:12px;letter-spacing:.02em}
@@ -353,6 +377,21 @@ img{max-width:100%;display:block}
 .nextread p{margin:0;color:var(--muted)}
 .hiring{border:1px solid var(--line);padding:clamp(24px,3vw,38px);margin-bottom:2.6em}
 .hiring p{margin:14px 0 22px}
+
+/* --- The reading column ------------------------------------------------
+   .prose is the full shell, so images, tables and the feature blocks fill
+   it by default. Running text is pulled back to --measure by indenting its
+   inline margins, which keeps every element in normal flow: adjacent
+   margins still collapse, so the vertical rhythm is untouched, and it works
+   for the inline-block back-link as well as the block elements.
+   These rules must stay last — `.prose > p` and `.prose p` have identical
+   specificity, so the earlier per-element margin shorthands would otherwise
+   win and reset the indent to zero. */
+.prose > p,.prose > ul,.prose > ol,.prose > h2,.prose > h3,.prose > h4,.prose > h5,
+.prose > blockquote,.prose > hr,.prose > .back--end{
+  margin-inline:max(0px,(100% - var(--measure))/2)}
+/* Text inside the full-width feature blocks stays on the same measure. */
+.bottomline p,.nextread h3,.nextread p,.hiring p{max-width:var(--measure)}
 .btn-solid{display:inline-block;background:var(--ink);color:#fff;padding:15px 26px;transition:background .35s}
 .btn-solid:hover{background:var(--accent)}
 .contact-links{list-style:none;margin:0;padding:0;display:grid;gap:12px}
