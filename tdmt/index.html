@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Test Data Management Tool | StrategySoul</title>
-<meta name="description" content="Launching the Test Data Management Tool at Dell: how automation and change management drove efficiency across 10,000+ SKUs a month.">
+<meta name="description" content="How I built the Test Data Management Tool at Dell with no budget and a borrowed team, cutting test SKU setup from 45 minutes to under 2. Winner of the CIO Game Changers award.">
 <meta property="og:title" content="Test Data Management Tool | StrategySoul">
-<meta property="og:description" content="Launching the Test Data Management Tool at Dell: how automation and change management drove efficiency across 10,000+ SKUs a month.">
+<meta property="og:description" content="How I built the Test Data Management Tool at Dell with no budget and a borrowed team, cutting test SKU setup from 45 minutes to under 2. Winner of the CIO Game Changers award.">
 <meta property="og:type" content="website">
 <link rel="icon" href="/favicon-knight.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -59,9 +59,32 @@
   </div>
 </header>
 <article class="prose">
-<p>12,000 SKUs tested per month, 45 minutes each. I automated it, cut that to under 2 minutes, earned CIO recognition, and then discovered the harder problem: building the tool was the easy part. Getting engineers to actually use it was the real product challenge.</p>
-      <p>This case study covers the full arc: the technical build, the adoption problem, the change management strategies that worked, and the ones that didn&apos;t. It&apos;s also the one that taught me the difference between shipping a product and shipping a product that gets used.</p>
-      <div class="comingsoon"><p>Full case study coming soon. Get notified when it&apos;s published:</p></div>
+<p><strong>Setting up one test SKU took 45 minutes of manual work.</strong> I built a tool that cut it to under 2, with no budget, no mandate, and a team I had to recruit myself. It won Dell's CIO Game Changers award.</p>
+
+      <h2>Where the hours went</h2>
+      <p>If you needed test data at Dell, you needed an SKU set up in Oracle E-Business Suite, and that meant filling it in field by field. Many fields fired their own automations, so every value had to be exactly right for the next step to work. Get one wrong and nothing told you. The break only showed up downstream, and then the fixing started.</p>
+      <p>One SKU took about 45 minutes, and more if a break sent it back.</p>
+      <p>The work rolled downhill. When a team built a new API, a senior engineer needed test data to check it, and the setup landed on a junior engineer. I was one of them. The junior had two options: hand it to the testing team and wait in their queue, or do it yourself. Doing it yourself was faster, but it still cost an hour that should have gone to real engineering.</p>
+
+      <h2>Nobody was going to fund this</h2>
+      <p>Everyone who had done the setup knew the problem. It just wasn't anyone's job to fix.</p>
+      <p>My first attempt was the obvious one: I proposed it to my manager. It was shot down. There was no budget and nobody who could be dedicated to it. Worse, it needed several teams to cooperate, and no one wanted to spend the time getting that many people on board. Carrying on as before was simply easier. Habits are hard to change, and this one had a whole org behind it.</p>
+      <p>So I changed the ask. Instead of a proposal, I started with the part I could do alone. I built the APIs that applied a SKU's automation rules, then a sample showing the data flowing cleanly downstream. That was my pitch. Not a slide, a working piece.</p>
+      <p>With it, I went to the senior manager of the testing team and asked for people. He gave us a principal software engineer as a guide. I also pulled in developers from the upstream and downstream teams, the people whose systems the data had to pass through, to build out the rest of the APIs.</p>
+      <p>We ended up as six engineers plus the principal engineer, all working on top of our day jobs. That made it slow. It also meant nobody needed convincing about the problem, because we had all lived it.</p>
+
+      <h2>Just the SKU name</h2>
+      <p>The principal engineer went a step further and built a UI over the APIs. That turned a set of endpoints into a tool anyone could pick up.</p>
+      <p>With the Test Data Management Tool, setting up an SKU meant typing its name. The automation rules applied themselves. You waited a few minutes for the data to pass its checks and flow downstream, and that was it. Under 2 minutes of hands-on time instead of 45.</p>
+
+      <h2>So, what happened?</h2>
+      <p>Anyone with the right credentials could now set up their own test data. Juniors stopped being the default handoff, and seniors stopped waiting on juniors. The testing team got its queue back and spent it on making our applications sturdier, and on maintaining the tool itself.</p>
+      <p>At peak it handled 1,500 to 2,000 SKUs a month, and around 11,000 to 12,000 a year. By hand, at 45 minutes each, that volume is about 9,000 hours a year. With the tool, it's about 400.</p>
+      <p>The project won the CIO Game Changers award and a mention at the all-hands. Honestly, the better reward was never doing that setup again.</p>
+
+      <h2>Final takeaway</h2>
+      <p>The technical part was the easy part. The team already knew every input; we only had to encode it.</p>
+      <p>The hard part was getting it built at all, with no budget and no mandate, only a problem everyone had stopped noticing. My proposal got a no. A small working version, shown to the right person, got a team. A demo recruits people in a way a proposal doesn't.</p>
 
 
 <a class="back back--end" href="/#work">← Back to Work</a>
