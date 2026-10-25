@@ -128,10 +128,8 @@ p{margin:0}
 .logo--dell{height:27px}
 .logo--seal{height:56px}
 .logo--hec{height:48px}
-@media (prefers-color-scheme:dark){
-  /* navy logos vanish on a dark ground: give each a white tile instead of altering it */
-  .marquee__set li{background:#FFFFFF;border-radius:12px;padding:10px 18px}
-}
+/* the strip stays white in both themes so every logo reads in its own colours */
+.logos{background:#FFFFFF}
 @media (max-width:767px){.logo{height:26px}.logo--dell{height:20px}.logo--seal{height:44px}.logo--hec{height:38px}}
 @media (prefers-reduced-motion:no-preference){
   .marquee__track{animation:marquee 32s linear infinite}
