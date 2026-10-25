@@ -123,15 +123,14 @@ p{margin:0}
           mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
 .marquee__track{display:flex;width:max-content}
 .marquee__set{display:flex;align-items:center;gap:clamp(48px,7vw,96px);padding:0 clamp(24px,3.5vw,48px);margin:0;list-style:none}
-.logo{display:block;width:auto;height:34px;filter:grayscale(1);opacity:.72;transition:filter .3s,opacity .3s}
+/* logos are shown exactly as published: no filters, no fading */
+.logo{display:block;width:auto;height:34px}
 .logo--dell{height:27px}
 .logo--seal{height:56px}
 .logo--hec{height:48px}
-.logo:hover{filter:none;opacity:1}
 @media (prefers-color-scheme:dark){
-  /* navy and blue logos vanish on a dark ground: render them as light silhouettes */
-  .logo,.logo:hover{filter:brightness(0) invert(1)}
-  .logo{opacity:.55}
+  /* navy logos vanish on a dark ground: give each a white tile instead of altering it */
+  .marquee__set li{background:#FFFFFF;border-radius:12px;padding:10px 18px}
 }
 @media (max-width:767px){.logo{height:26px}.logo--dell{height:20px}.logo--seal{height:44px}.logo--hec{height:38px}}
 @media (prefers-reduced-motion:no-preference){
