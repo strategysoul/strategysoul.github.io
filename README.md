@@ -13,7 +13,7 @@ strategy-breakdowns/           breakdowns index
 strategy-breakdowns/<slug>/    individual breakdowns
 <project-slug>/                case studies
 assets/css/site.css            the whole design system
-assets/js/site.js              cursor, nav, reveals, reading progress
+assets/js/site.js              mobile nav, scroll reveals
 assets/img/                    images (carried over unchanged)
 ```
 
@@ -21,23 +21,27 @@ Every URL from the previous Next.js site is preserved, so no existing link break
 
 ## Design system
 
-Defined once in `assets/css/site.css` as custom properties:
+Defined once in `assets/css/site.css` as custom properties, with a dark
+palette under `prefers-color-scheme: dark`.
 
-| Token | Value | Role |
-|---|---|---|
-| `--ink` | `#1C1D20` | body text, nav + footer ground |
-| `--ink-deep` | `#141517` | deepest ground |
-| `--paper` | `#FFFFFF` | page ground |
-| `--accent` | `#455CE9` | cursor bubble, links, hover states |
-| `--sand` | `#E0D9D1` | warm neutral |
+| Token | Light | Dark | Role |
+|---|---|---|---|
+| `--bg` | `#F5F6F8` | `#0C0E12` | page ground |
+| `--ink` | `#0F1115` | `#ECEEF2` | text |
+| `--muted` | `#596070` | `#9AA1AE` | secondary text |
+| `--accent` | `#3D52E0` | `#8391FF` | the one accent: links, tags, key numbers |
 
-Type is Archivo (Google Fonts) at 300/500/800 throughout.
+Type is Geist, with Geist Mono for numbers and labels. Buttons are pills;
+cards and media use a 16px radius.
+
+Missing media is shown as a dashed `.ph` placeholder box. Search the HTML for
+`TODO(owner)` to find every image, video, logo or file still to add.
 
 ## Editing
 
 - **Content** lives directly in the HTML — edit the file for the page.
 - **Design** changes go in `assets/css/site.css`; every page picks them up.
-- **Behaviour** is in `assets/js/site.js` — dependency-free, roughly 150 lines.
+- **Behaviour** is in `assets/js/site.js` — dependency-free, about 35 lines.
 
 ## Deploying
 

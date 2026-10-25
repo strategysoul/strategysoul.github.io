@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>.ink{fill:#0F1115}.acc{fill:#3D52E0}@media (prefers-color-scheme:dark){.ink{fill:#ECEEF2}.acc{fill:#8391FF}}</style>
+  <defs><mask id="eye"><rect width="32" height="32" fill="#fff"/><circle cx="15.4" cy="10.6" r="1.5" fill="#000"/></mask></defs>
+  <path class="ink" mask="url(#eye)" d="M10 27h14v-2.5c0-3.5-2.5-5-2.2-9 .2-4.5-2.8-9-7.8-10.5l-.8 2.8c-2.7 1.2-4.7 3.7-6 7.4-.4 1.4.6 2.4 1.8 2l3.8-1.6c.8-.3 1.4.6.8 1.3C11.2 19.6 10 22 10 24.5z"/>
+  <path class="acc" d="M14 5c5 1.5 8 6 7.8 10.5-.3 4 2.2 5.5 2.2 9H20.6c0-3-2.6-4.8-2.4-8.8.2-3.6-1.6-6.8-4.9-8.1z"/>
+  <rect class="ink" x="8" y="26" width="18" height="3" rx="1.5"/>
+</svg>

@@ -7,58 +7,47 @@
 <meta name="description" content="Accuracy tells you which model is right. Latency tells you which one ships. I timed 12 speech-to-text models across 5 providers on accented English.">
 <meta property="og:title" content="Transcription Latency Benchmark | StrategySoul">
 <meta property="og:description" content="Accuracy tells you which model is right. Latency tells you which one ships. I timed 12 speech-to-text models across 5 providers on accented English.">
-<meta property="og:type" content="website">
-<link rel="icon" href="/favicon-knight.svg">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://strategysoul.github.io/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="StrategySoul: Sweta Kumari, product leader for 0 to 1 AI and enterprise automation">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://strategysoul.github.io/assets/img/og.png">
+<meta name="theme-color" content="#F5F6F8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0C0E12" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@500&display=swap">
 <script>document.documentElement.className="js";</script>
-<link rel="stylesheet" href="/assets/css/site.css?v=574e0a42">
+<link rel="stylesheet" href="/assets/css/site.css?v=36296a47bf">
 </head>
 <body>
-<svg class="grain" aria-hidden="true"><filter id="gf"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(#gf)"/></svg>
-<div class="cursor-dot" id="curDot" aria-hidden="true"></div>
-<div class="cursor-bubble" id="curBubble" aria-hidden="true">View</div>
-<div class="work-preview" id="workPreview" aria-hidden="true"></div>
-<div class="navbar">
-  <a class="credits" href="/">
-    <span class="credits__sym" aria-hidden="true">&copy;</span>
-    <span class="credits__swap"><span>Code by</span><span>Sweta Kumari</span></span>
-  </a>
-  <div class="navlinks"><a href="/#work">Work</a><a href="/about/">About</a><a href="/strategy-breakdowns/">Breakdowns</a><a href="/contact/">Contact</a>
-    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
-      Menu<span class="lines" aria-hidden="true"><i></i><i></i></span>
-    </button>
-  </div>
-</div>
-<nav class="navpanel theme-dark" id="navPanel" aria-hidden="true">
-  <button class="navpanel__close" id="navClose">Close</button>
-  <ul class="navpanel__list">
-    <li><a href="/" data-nav>Home</a></li>
-    <li><a href="/#work" data-nav>Work</a></li><li><a href="/about/" data-nav>About</a></li><li><a href="/strategy-breakdowns/" data-nav>Breakdowns</a></li><li><a href="/contact/" data-nav>Contact</a></li>
-  </ul>
-  <div class="navpanel__meta">
-    <div><div class="label" style="margin-bottom:12px">Socials</div>
-      <div class="navpanel__socials">
-        <a href="https://www.linkedin.com/in/swetakumaripm" target="_blank" rel="noreferrer">LinkedIn &#8599;</a>
-        <a href="https://github.com/strategysoul" target="_blank" rel="noreferrer">GitHub &#8599;</a>
-        <a href="mailto:swetakumaripm@gmail.com">Email</a>
-      </div></div>
-    <div><div class="label" style="margin-bottom:8px">Get in touch</div>
-      <a href="mailto:swetakumaripm@gmail.com" style="font-size:17px">swetakumaripm@gmail.com</a></div>
-  </div>
-</nav>
-
-<div class="progress" id="progress"></div>
-<header class="masthead masthead--article">
-  <div class="masthead__inner">
-    <a class="back" href="/#work">← Back to Work</a>
-    <span class="label">AI Research · Huscribe</span>
-    <h1 class="display masthead__title masthead__title--article">I Timed 12 Transcription Models So You Don&#x27;t Have To</h1>
-    <p class="masthead__meta">June 14, 2026 &middot; 6 min read</p>
-  </div>
-</header>
-<article class="prose">
+<div class="progress" aria-hidden="true"></div>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav"><div class="wrap nav__in">
+  <a class="brand" href="/"><svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true"><defs><mask id="brand-eye"><rect width="32" height="32" fill="#fff"/><circle cx="15.4" cy="10.6" r="1.5" fill="#000"/></mask></defs><path fill="currentColor" mask="url(#brand-eye)" d="M10 27h14v-2.5c0-3.5-2.5-5-2.2-9 .2-4.5-2.8-9-7.8-10.5l-.8 2.8c-2.7 1.2-4.7 3.7-6 7.4-.4 1.4.6 2.4 1.8 2l3.8-1.6c.8-.3 1.4.6.8 1.3C11.2 19.6 10 22 10 24.5z"/><path style="fill:var(--accent)" d="M14 5c5 1.5 8 6 7.8 10.5-.3 4 2.2 5.5 2.2 9H20.6c0-3-2.6-4.8-2.4-8.8.2-3.6-1.6-6.8-4.9-8.1z"/><rect fill="currentColor" x="8" y="26" width="18" height="3" rx="1.5"/></svg>StrategySoul</a>
+  <button class="nav__toggle" aria-expanded="false" aria-controls="navlinks">Menu</button>
+  <nav class="nav__links" id="navlinks" aria-label="Primary">
+    <a href="/#work" aria-current="page">Work</a><a href="/about/">About</a><a href="/strategy-breakdowns/">Breakdowns</a>
+    <a class="btn btn--primary btn--sm" href="/contact/">Let's talk</a>
+  </nav>
+</div></header>
+<main id="main">
+<article>
+<div class="wrap"><header class="cs-head">
+  <a class="crumb" href="/#work">&larr; All work</a>
+  <span class="tag">AI Research · Huscribe</span>
+  <h1>I Timed 12 Transcription Models So You Don&#x27;t Have To</h1>
+  <p class="dek">Accuracy says which model is right. Latency says which one can ship in a live product.</p>
+  <dl class="cs-meta"><div><dt>Role</dt><dd>Founding PM, Humai</dd></div><div><dt>Product</dt><dd>Huscribe</dd></div><div><dt>Decision</dt><dd>Real-time viability</dd></div><div><dt>Method</dt><dd>End-to-end latency</dd></div></dl>
+  <div class="cs-impact"><div><b>1.9s</b><span>fastest average (gpt-4o-mini-transcribe)</span></div><div><b>16.9s</b><span>slowest average (Azure Speech)</span></div><div><b>25</b><span>clips per accent group</span></div></div>
+  <div class="cs-cover"><figure class="chart-fig"><div class="chart-scroll"><svg class="chart" viewBox="0 0 640 400" role="img" aria-label="Scatter chart of average latency against word error rate for six transcription models. gpt-4o-mini-transcribe is the only model that is both fast and accurate: 1.9 seconds and 3.4 percent."><g class="grid"><line x1="64" x2="64" y1="28" y2="336"/><text x="64" y="356" text-anchor="middle">1s</text><line x1="191.72077366418708" x2="191.72077366418708" y1="28" y2="336"/><text x="191.72077366418708" y="356" text-anchor="middle">2s</text><line x1="360.55845267162584" x2="360.55845267162584" y1="28" y2="336"/><text x="360.55845267162584" y="356" text-anchor="middle">5s</text><line x1="488.279226335813" x2="488.279226335813" y1="28" y2="336"/><text x="488.279226335813" y="356" text-anchor="middle">10s</text><line x1="616" x2="616" y1="28" y2="336"/><text x="616" y="356" text-anchor="middle">20s</text><line x1="64" x2="616" y1="336" y2="336"/><text x="54" y="340" text-anchor="end">0%</text><line x1="64" x2="616" y1="259" y2="259"/><text x="54" y="263" text-anchor="end">3%</text><line x1="64" x2="616" y1="182" y2="182"/><text x="54" y="186" text-anchor="end">6%</text><line x1="64" x2="616" y1="105" y2="105"/><text x="54" y="109" text-anchor="end">9%</text><line x1="64" x2="616" y1="28" y2="28"/><text x="54" y="32" text-anchor="end">12%</text></g><rect class="zone" x="64" y="233.33333333333334" width="202.43263682083068" height="102.66666666666666" rx="6"/><text class="zone-label" x="74" y="326">Tier 1 on both</text><g class="pt pt--win"><title>gpt-4o-mini-transcribe: 1.9s average latency, 3.4% word error rate</title><circle class="hit" cx="182.3" cy="248.7" r="16"/><circle class="dot" cx="182.3" cy="248.7" r="7"/><text class="lbl" x="194.3" y="252.7" text-anchor="start">gpt-4o-mini-transcribe</text></g><g class="pt"><title>gpt-4o-transcribe: 2.9s average latency, 5.8% word error rate</title><circle class="hit" cx="260.2" cy="187.1" r="16"/><circle class="dot" cx="260.2" cy="187.1" r="6"/><text class="lbl" x="272.2" y="191.1" text-anchor="start">gpt-4o-transcribe</text></g><g class="pt"><title>deepgram-nova-3: 3s average latency, 9% word error rate</title><circle class="hit" cx="266.4" cy="105.0" r="16"/><circle class="dot" cx="266.4" cy="105.0" r="6"/><text class="lbl" x="278.4" y="109" text-anchor="start">deepgram-nova-3</text></g><g class="pt"><title>deepgram-nova-2: 3s average latency, 10.5% word error rate</title><circle class="hit" cx="266.4" cy="66.5" r="16"/><circle class="dot" cx="266.4" cy="66.5" r="6"/><text class="lbl" x="278.4" y="70.5" text-anchor="start">deepgram-nova-2</text></g><g class="pt"><title>whisper-1: 4.2s average latency, 2.7% word error rate</title><circle class="hit" cx="328.4" cy="266.7" r="16"/><circle class="dot" cx="328.4" cy="266.7" r="6"/><text class="lbl" x="340.4" y="270.7" text-anchor="start">whisper-1</text></g><g class="pt"><title>azure-speech: 16.9s average latency, 8.5% word error rate</title><circle class="hit" cx="585.0" cy="117.8" r="16"/><circle class="dot" cx="585.0" cy="117.8" r="6"/><text class="lbl" x="573" y="121.8" text-anchor="end">azure-speech</text></g><text class="axis-title" x="340" y="382" text-anchor="middle">Average latency (log scale), lower is better</text><text class="axis-title" transform="translate(16 182) rotate(-90)" text-anchor="middle">Word error rate, lower is better</text></svg></div><figcaption>Six models measured in both benchmarks. Gemini and AssemblyAI ran different model versions in each test, so they are left out.</figcaption></figure></div>
+</header></div>
+<div class="wrap">
+  <aside class="tldr"><h2>The short version</h2><p>Accuracy tells you which model is right. Latency tells you which one ships. gpt-4o-mini-transcribe was the rare model that won both: Tier-1 accuracy and the fastest response in the test. But the metric that will actually decide a live product is streaming latency, first-token time while the speaker is still talking, and that&#x27;s a different benchmark entirely.</p></aside>
+  <div class="prose">
 <p>Last time, I made 12 AI models transcribe accented English and ranked them on accuracy. Then I shipped exactly none of them, because I realized accuracy is only half a product. The other half is whether the transcript shows up before the conversation is over.</p>
       <p>Picture a live sales call. Your model is 2% more accurate than the next one, and you feel very smart about that, right up until it takes four extra seconds to answer. By the time the perfect transcript lands, the rep has moved on, the coaching tip is stale, and the moment is gone. The slower, &quot;smarter&quot; model just lost to a faster, dumber one. So before crowning anything, I put all 12 on a stopwatch: same models, same providers, same accented clips, one question. How long does each one actually take to hand back a transcript?</p>
       <h2>What I Was Trying to Answer</h2>
@@ -115,35 +104,33 @@
       </ul>
       <p>Cross-referenced with the accuracy report, the standout is clear: <strong>gpt-4o-mini-transcribe is both Tier-1 accuracy and Tier-1 latency.</strong> If I had to ship one model today, that&apos;s the bet.</p>
       <p>But the metric that will actually decide a live product is <strong>streaming latency</strong>, first-token time as the speaker is still talking. That&apos;s the test coming next.</p>
-<div class="bottomline"><span class="label">The bottom line</span><p>Accuracy tells you which model is right. Latency tells you which one ships. gpt-4o-mini-transcribe was the rare model that won both: Tier-1 accuracy and the fastest response in the test. But the metric that will actually decide a live product is streaming latency, first-token time while the speaker is still talking, and that&#x27;s a different benchmark entirely.</p></div>
-<a class="nextread" href="/transcription-benchmark/">
-  <span class="label">Next read &#8212; AI Research · Huscribe</span>
-  <h3>I tested 12 transcription models so you don&#x27;t have to</h3><p>The accuracy half of this story: 12 models, 5 providers, accented English. Whisper won, AssemblyAI surprised everyone, and Deepgram disappointed.</p></a>
-<a class="back back--end" href="/#work">← Back to Work</a>
-</article>
-<footer class="sitefooter theme-dark">
-  <div class="sitefooter__top">
-    <h2 class="sitefooter__big">Let's build<br>something worth<br>talking about.</h2>
-    <a class="roundbtn sitefooter__cta" href="mailto:swetakumaripm@gmail.com" data-magnetic><span>Get in<br>touch</span></a>
+  <p class="eyebrow">June 14, 2026 &middot; 6 min read</p>
   </div>
-  <div class="sitefooter__rule"></div>
-  <div class="sitefooter__contact">
+  <a class="nextread" href="/transcription-benchmark/">
+  <span class="label">Next read: AI Research · Huscribe</span>
+  <h3>I tested 12 transcription models so you don&#x27;t have to</h3><p>The accuracy half of this story: 12 models, 5 providers, accented English. Whisper won, AssemblyAI surprised everyone, and Deepgram disappointed.</p></a>
+</div>
+</article>
+<section class="section"><div class="wrap">
+  <div class="cta rv">
+    <div>
+      <h2>Hiring a product leader? Let's talk.</h2>
+      <p>Open to new opportunities. Based in Dubai, open to relocate.</p>
+    </div>
+    <div class="cta__btns">
+      <a class="btn btn--primary" href="mailto:swetakumaripm@gmail.com?subject=Product%20role">Let's talk <span class="arr">&rarr;</span></a>
+    </div>
+  </div>
+</div></section>
+</main>
+<footer class="footer"><div class="wrap footer__in">
+  <span>&copy; <span id="yr">2026</span> StrategySoul</span>
+  <nav aria-label="Footer">
     <a href="mailto:swetakumaripm@gmail.com">swetakumaripm@gmail.com</a>
     <a href="https://www.linkedin.com/in/swetakumaripm" target="_blank" rel="noreferrer">LinkedIn &#8599;</a>
     <a href="https://github.com/strategysoul" target="_blank" rel="noreferrer">GitHub &#8599;</a>
-  </div>
-  <div class="sitefooter__base">
-    <div class="col"><span class="k">Version</span><span><span id="yr"></span> &copy; Edition</span></div>
-    <div class="col"><span class="k">Local time</span><span class="clock" id="clock">--:--</span></div>
-    <div class="col"><span class="k">Socials</span>
-      <span class="sitefooter__socials">
-        <a href="https://www.linkedin.com/in/swetakumaripm" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a href="https://github.com/strategysoul" target="_blank" rel="noreferrer">GitHub</a>
-        <a href="mailto:swetakumaripm@gmail.com">Email</a>
-        <a href="/strategy-breakdowns/">Breakdowns</a>
-      </span></div>
-  </div>
-</footer>
-<script src="/assets/js/site.js?v=574e0a42"></script>
+  </nav>
+</div></footer>
+<script src="/assets/js/site.js?v=36296a47bf"></script>
 </body>
 </html>

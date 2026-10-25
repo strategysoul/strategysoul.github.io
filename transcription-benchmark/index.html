@@ -7,58 +7,47 @@
 <meta name="description" content="I tested 12 speech-to-text models across 5 providers on 50 clips of accented English. Here&#x27;s what I found.">
 <meta property="og:title" content="Transcription Model Benchmark | StrategySoul">
 <meta property="og:description" content="I tested 12 speech-to-text models across 5 providers on 50 clips of accented English. Here&#x27;s what I found.">
-<meta property="og:type" content="website">
-<link rel="icon" href="/favicon-knight.svg">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://strategysoul.github.io/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="StrategySoul: Sweta Kumari, product leader for 0 to 1 AI and enterprise automation">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://strategysoul.github.io/assets/img/og.png">
+<meta name="theme-color" content="#F5F6F8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0C0E12" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@500&display=swap">
 <script>document.documentElement.className="js";</script>
-<link rel="stylesheet" href="/assets/css/site.css?v=574e0a42">
+<link rel="stylesheet" href="/assets/css/site.css?v=36296a47bf">
 </head>
 <body>
-<svg class="grain" aria-hidden="true"><filter id="gf"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(#gf)"/></svg>
-<div class="cursor-dot" id="curDot" aria-hidden="true"></div>
-<div class="cursor-bubble" id="curBubble" aria-hidden="true">View</div>
-<div class="work-preview" id="workPreview" aria-hidden="true"></div>
-<div class="navbar">
-  <a class="credits" href="/">
-    <span class="credits__sym" aria-hidden="true">&copy;</span>
-    <span class="credits__swap"><span>Code by</span><span>Sweta Kumari</span></span>
-  </a>
-  <div class="navlinks"><a href="/#work">Work</a><a href="/about/">About</a><a href="/strategy-breakdowns/">Breakdowns</a><a href="/contact/">Contact</a>
-    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
-      Menu<span class="lines" aria-hidden="true"><i></i><i></i></span>
-    </button>
-  </div>
-</div>
-<nav class="navpanel theme-dark" id="navPanel" aria-hidden="true">
-  <button class="navpanel__close" id="navClose">Close</button>
-  <ul class="navpanel__list">
-    <li><a href="/" data-nav>Home</a></li>
-    <li><a href="/#work" data-nav>Work</a></li><li><a href="/about/" data-nav>About</a></li><li><a href="/strategy-breakdowns/" data-nav>Breakdowns</a></li><li><a href="/contact/" data-nav>Contact</a></li>
-  </ul>
-  <div class="navpanel__meta">
-    <div><div class="label" style="margin-bottom:12px">Socials</div>
-      <div class="navpanel__socials">
-        <a href="https://www.linkedin.com/in/swetakumaripm" target="_blank" rel="noreferrer">LinkedIn &#8599;</a>
-        <a href="https://github.com/strategysoul" target="_blank" rel="noreferrer">GitHub &#8599;</a>
-        <a href="mailto:swetakumaripm@gmail.com">Email</a>
-      </div></div>
-    <div><div class="label" style="margin-bottom:8px">Get in touch</div>
-      <a href="mailto:swetakumaripm@gmail.com" style="font-size:17px">swetakumaripm@gmail.com</a></div>
-  </div>
-</nav>
-
-<div class="progress" id="progress"></div>
-<header class="masthead masthead--article">
-  <div class="masthead__inner">
-    <a class="back" href="/#work">← Back to Work</a>
-    <span class="label">AI Research · Huscribe</span>
-    <h1 class="display masthead__title masthead__title--article">I Tested 12 Transcription Models So You Don&#x27;t Have To</h1>
-    <p class="masthead__meta">April 29, 2026 &middot; 8 min read</p>
-  </div>
-</header>
-<article class="prose">
+<div class="progress" aria-hidden="true"></div>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav"><div class="wrap nav__in">
+  <a class="brand" href="/"><svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true"><defs><mask id="brand-eye"><rect width="32" height="32" fill="#fff"/><circle cx="15.4" cy="10.6" r="1.5" fill="#000"/></mask></defs><path fill="currentColor" mask="url(#brand-eye)" d="M10 27h14v-2.5c0-3.5-2.5-5-2.2-9 .2-4.5-2.8-9-7.8-10.5l-.8 2.8c-2.7 1.2-4.7 3.7-6 7.4-.4 1.4.6 2.4 1.8 2l3.8-1.6c.8-.3 1.4.6.8 1.3C11.2 19.6 10 22 10 24.5z"/><path style="fill:var(--accent)" d="M14 5c5 1.5 8 6 7.8 10.5-.3 4 2.2 5.5 2.2 9H20.6c0-3-2.6-4.8-2.4-8.8.2-3.6-1.6-6.8-4.9-8.1z"/><rect fill="currentColor" x="8" y="26" width="18" height="3" rx="1.5"/></svg>StrategySoul</a>
+  <button class="nav__toggle" aria-expanded="false" aria-controls="navlinks">Menu</button>
+  <nav class="nav__links" id="navlinks" aria-label="Primary">
+    <a href="/#work" aria-current="page">Work</a><a href="/about/">About</a><a href="/strategy-breakdowns/">Breakdowns</a>
+    <a class="btn btn--primary btn--sm" href="/contact/">Let's talk</a>
+  </nav>
+</div></header>
+<main id="main">
+<article>
+<div class="wrap"><header class="cs-head">
+  <a class="crumb" href="/#work">&larr; All work</a>
+  <span class="tag">AI Research · Huscribe</span>
+  <h1>I Tested 12 Transcription Models So You Don&#x27;t Have To</h1>
+  <p class="dek">Choosing the transcription layer for Huscribe on evidence, not marketing pages.</p>
+  <dl class="cs-meta"><div><dt>Role</dt><dd>Founding PM, Humai</dd></div><div><dt>Product</dt><dd>Huscribe</dd></div><div><dt>Decision</dt><dd>Speech-to-text vendor</dd></div><div><dt>Method</dt><dd>WER benchmark</dd></div></dl>
+  <div class="cs-impact"><div><b>12</b><span>models tested across 5 providers</span></div><div><b>50</b><span>accented clips with human-verified transcripts</span></div><div><b>2.7%</b><span>best average word error rate (whisper-1)</span></div><div><b>3</b><span>models in the production design</span></div></div>
+  <div class="cs-cover"><img src="/assets/img/accents.jpg" alt="Accented speech benchmark"></div>
+</header></div>
+<div class="wrap">
+  <aside class="tldr"><h2>The short version</h2><p>The winner of a benchmark isn&#x27;t always the right answer for production. Whisper-1 leads on accuracy, but the real product insight came from an edge case it couldn&#x27;t solve: models silently switching languages on culturally ambiguous names. The architecture that shipped wasn&#x27;t the best single model; it was redundancy designed around the failure mode.</p></aside>
+  <div class="prose">
 <p>Almost every transcription benchmark tests crisp, American-accented English recorded in a silent room. Which is adorable, because no real sales call has ever sounded like that.</p>
       <p>Here&apos;s the thing every voice-AI product quietly hopes you won&apos;t notice: it&apos;s only as good as its transcription layer. The smartest coaching engine in the world is dead weight if the model hears &quot;we&apos;re willing to pivot&quot; as &quot;we&apos;re willing to visit.&quot; One wrong word, one flipped deal. So instead of trusting twelve marketing pages that all somehow claim to be state of the art, I did the unreasonable thing and actually tested them: 12 models, 5 providers, 50 clips of gloriously accented English, one metric, zero vibes. Here&apos;s what happened.</p>
       <h2>What I Was Trying to Answer</h2>
@@ -121,35 +110,33 @@
       <img src="/assets/img/transcript.jpeg" alt="Transcript output example">
       <p>So the architecture I landed on uses three models in sequence. Whisper handles language detection first. Once the language is confirmed, GPT-4o Transcribe runs the actual transcription anchored to that language. A third model (Gemini, once quota allows) cross-checks the output. If the two transcriptions diverge beyond a confidence threshold, the user gets to resolve the difference. If they agree, the higher-confidence result goes through.</p>
       <p>It&apos;s more expensive than picking a winner and shipping it. But for a sales tool where one mis-transcribed name can derail a deal, the redundancy is the product.</p>
-<div class="bottomline"><span class="label">The bottom line</span><p>The winner of a benchmark isn&#x27;t always the right answer for production. Whisper-1 leads on accuracy, but the real product insight came from an edge case it couldn&#x27;t solve: models silently switching languages on culturally ambiguous names. The architecture that shipped wasn&#x27;t the best single model; it was redundancy designed around the failure mode.</p></div>
-<a class="nextread" href="/salsus/">
-  <span class="label">Next read &#8212; GTM Strategy · HEC Paris</span>
-  <h3>Branding strategy for Salsus</h3><p>A Norwegian premium broth brand wanted to crack the French market. French chefs disagreed. We found a way.</p></a>
-<a class="back back--end" href="/#work">← Back to Work</a>
-</article>
-<footer class="sitefooter theme-dark">
-  <div class="sitefooter__top">
-    <h2 class="sitefooter__big">Let's build<br>something worth<br>talking about.</h2>
-    <a class="roundbtn sitefooter__cta" href="mailto:swetakumaripm@gmail.com" data-magnetic><span>Get in<br>touch</span></a>
+  <p class="eyebrow">April 29, 2026 &middot; 8 min read</p>
   </div>
-  <div class="sitefooter__rule"></div>
-  <div class="sitefooter__contact">
+  <a class="nextread" href="/salsus/">
+  <span class="label">Next read: GTM Strategy · HEC Paris</span>
+  <h3>Branding strategy for Salsus</h3><p>A Norwegian premium broth brand wanted to crack the French market. French chefs disagreed. We found a way.</p></a>
+</div>
+</article>
+<section class="section"><div class="wrap">
+  <div class="cta rv">
+    <div>
+      <h2>Hiring a product leader? Let's talk.</h2>
+      <p>Open to new opportunities. Based in Dubai, open to relocate.</p>
+    </div>
+    <div class="cta__btns">
+      <a class="btn btn--primary" href="mailto:swetakumaripm@gmail.com?subject=Product%20role">Let's talk <span class="arr">&rarr;</span></a>
+    </div>
+  </div>
+</div></section>
+</main>
+<footer class="footer"><div class="wrap footer__in">
+  <span>&copy; <span id="yr">2026</span> StrategySoul</span>
+  <nav aria-label="Footer">
     <a href="mailto:swetakumaripm@gmail.com">swetakumaripm@gmail.com</a>
     <a href="https://www.linkedin.com/in/swetakumaripm" target="_blank" rel="noreferrer">LinkedIn &#8599;</a>
     <a href="https://github.com/strategysoul" target="_blank" rel="noreferrer">GitHub &#8599;</a>
-  </div>
-  <div class="sitefooter__base">
-    <div class="col"><span class="k">Version</span><span><span id="yr"></span> &copy; Edition</span></div>
-    <div class="col"><span class="k">Local time</span><span class="clock" id="clock">--:--</span></div>
-    <div class="col"><span class="k">Socials</span>
-      <span class="sitefooter__socials">
-        <a href="https://www.linkedin.com/in/swetakumaripm" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a href="https://github.com/strategysoul" target="_blank" rel="noreferrer">GitHub</a>
-        <a href="mailto:swetakumaripm@gmail.com">Email</a>
-        <a href="/strategy-breakdowns/">Breakdowns</a>
-      </span></div>
-  </div>
-</footer>
-<script src="/assets/js/site.js?v=574e0a42"></script>
+  </nav>
+</div></footer>
+<script src="/assets/js/site.js?v=36296a47bf"></script>
 </body>
 </html>
